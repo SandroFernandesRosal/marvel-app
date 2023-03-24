@@ -1,26 +1,37 @@
 
 import { ThemeProvider } from "styled-components";
 import { GloballStyles } from "./Themes/GlobalStyles";
-import themes from "./themes"
-import { useState } from "react"
+
+import { AppRoutes } from "./Routes/Approutes";
+
+import dark from "./themes/dark";
+import light from "./themes/light";
+import { useState } from "react";
+
 
 
 function App() {
-  const [ theme, setTheme ] = useState('dark');
+  const [ theme, setTheme ] = useState(dark);
 
-  function handleChangeTheme() {
-    setTheme((prevState) => prevState === 'dark' ? 'light' : 'dark');
+  
+
+  const handleChangeTheme = () => {
+    
+    setTheme(theme.title === 'dark' ? light : dark);
+    
+    
   }
-console.log({theme});
+
+
+  
   return (
-    <ThemeProvider theme={themes[theme]}>
+    <ThemeProvider theme={theme}>
       <GloballStyles/>
-        <div className="App">
-          <button onClick={handleChangeTheme}>Mudar tema</button>
-          Marvel APP
-        </div>
+        
+          <AppRoutes handleChangeTheme={handleChangeTheme} />
+        
     </ThemeProvider>
   )
 }
 
-export default App
+export default App;

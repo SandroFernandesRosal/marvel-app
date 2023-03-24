@@ -1,6 +1,9 @@
 export default {
+  title: 'light',
   colors: {
-    background: '#E6E6E6',
-    textColor: '#0D1117',
+    primaryBg: 'white',
+    secundaryBg: 'gray',
+    primaryTextColor: 'black',
+    secundaryTextColor: 'red'
   }
 }
