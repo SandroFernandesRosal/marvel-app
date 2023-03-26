@@ -3,6 +3,7 @@ import { Container, ContainerDescription, CardDescriptions, CardItens } from "./
 import api from "../../Services/api";
 import { BsFillCartCheckFill } from "react-icons/bs";
 import { Search } from "../Search/Search";
+import { useCallback } from "react";
 
 
 
@@ -25,6 +26,22 @@ export const CardCharacter = () => {
       })
       .catch(err => console.log(err));
   }, []);
+
+  const handleMore = useCallback( async () => {
+    try {
+      const offset = characters.length;
+      const response = await api.get('characters', {
+        params: {
+          offset,
+        },
+      });
+
+      setCharacters([... characters, ... response.data.data.results]);
+    } 
+   catch(err) {
+        console.log(err);
+    }
+  }, [characters]);
 
   return(
     <>
@@ -63,8 +80,9 @@ export const CardCharacter = () => {
 </>
               )
          })}
-  
+     
     </Container>
+    <button className="more" onClick={handleMore}> Mais Personagens</button>
     </>
   )
 }
