@@ -13,6 +13,8 @@ body, html {
 background-color: ${({ theme }) => theme.colors.secundaryBg};
 color: ${({ theme }) => theme.colors.primaryTextColor};
 font-family: 'Roboto', sans-serif;
+
+
 }
 
 body::-webkit-scrollbar {

@@ -19,7 +19,6 @@ function App() {
     
     setTheme(theme.title === 'dark' ? light : dark);
     
-    
   }
 
 
@@ -28,7 +27,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GloballStyles/>
         
-          <AppRoutes handleChangeTheme={handleChangeTheme} />
+          <AppRoutes handleChangeTheme={handleChangeTheme} theme={theme} />
         
     </ThemeProvider>
   )

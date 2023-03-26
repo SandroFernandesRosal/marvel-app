@@ -1,15 +1,20 @@
 import { CardDescriptions } from "./styles";
+import { ContainerDescription } from "./styles";
 
-export const CardDescription = ({name, img, description, close}) => {
+export const CardDescription = ({character, handleDescription}) => {
 
   return(
-    <CardDescriptions>
-      <img src={img} />
-      <div className="descriptions">
-        <button type="button" onClick={close}>X</button>
-        <h2>{name}</h2>
-        <h3>{description}</h3>
-      </div>
-    </CardDescriptions>
+    <ContainerDescription >
+              
+              <CardDescriptions key={character.id} >
+                  <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
+                  <div className="descriptions">
+                    <button type="button" onClick={handleDescription}>X</button>
+                    <h2>{character.name}</h2>
+                    <p>{character.description}</p>
+                  </div>
+              </CardDescriptions>
+              
+            </ContainerDescription>
   )
 }

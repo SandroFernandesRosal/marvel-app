@@ -1,8 +1,8 @@
 export default {
   title: 'light',
   colors: {
-    primaryBg: 'white',
-    secundaryBg: 'gray',
+    primaryBg: 'gray',
+    secundaryBg: 'white',
     primaryTextColor: 'black',
     secundaryTextColor: 'red'
   }
