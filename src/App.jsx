@@ -1,9 +1,9 @@
 
 import { ThemeProvider } from "styled-components";
 import { GloballStyles } from "./Themes/GlobalStyles";
-
+import CartProvider from "./Context/Cart";
 import { AppRoutes } from "./Routes/Approutes";
-
+import usePersistedState from "./Hooks/usePersistedState";
 import dark from "./themes/dark";
 import light from "./themes/light";
 import { useState } from "react";
@@ -11,7 +11,7 @@ import { useState } from "react";
 
 
 function App() {
-  const [ theme, setTheme ] = useState(dark);
+  const [ theme, setTheme ] = usePersistedState('theme', dark);
 
   
 
@@ -25,10 +25,11 @@ function App() {
   
   return (
     <ThemeProvider theme={theme}>
-      <GloballStyles/>
-        
-          <AppRoutes handleChangeTheme={handleChangeTheme} theme={theme} />
-        
+        <CartProvider>
+            <GloballStyles/>
+              
+            <AppRoutes handleChangeTheme={handleChangeTheme} theme={theme} />
+      </CartProvider>
     </ThemeProvider>
   )
 }

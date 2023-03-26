@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Container, ContainerDescription, CardDescriptions, CardItens } from "./styles";
-import { CardItem } from "./CardItem";
-import { CardDescription } from "./CardDescription";
 import api from "../../Services/api";
+import { BsFillCartCheckFill } from "react-icons/bs";
+import { Search } from "../Search/Search";
+
+
 
 export const CardCharacter = () => {
 
@@ -10,14 +12,12 @@ export const CardCharacter = () => {
   const [ cardDescription, setCardDescription ] = useState(false);
   const [ search, setSearch ] = useState('');
  
- 
 
   const handleDescription = () => {
     cardDescription === false ? setCardDescription(true) : setCardDescription(false);
   }
 
-  const filteredCharacters = search.length > 0
-        ? characters.filter(character => character.name.includes(search)) : [];
+  
 
 
   useEffect(() => {
@@ -32,43 +32,42 @@ export const CardCharacter = () => {
 
   return(
     <>
-     <input
-          name="search"
-          type="text"
-          placeholder="Pesquise seu personagem"
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          
-        />
+     
+     <Search setCharacters={setCharacters}/>
     
     
     <Container>
-     
-        { search.length > 0 ? (
-          <>
-           {filteredCharacters.map(character => {
-            return( 
-               <CardItem key={character.id} character={character} handleDescription={handleDescription} />
-              )
-            })} 
-          </>
-        ) : ( 
-          <>
-            {characters.map(character => {
+        
+        {characters.map(character => {
               return( 
                 <>
-                 <CardItem key={character.id} character={character} handleDescription={handleDescription} />
-                 {cardDescription && <CardDescription character={character} handleDescription={handleDescription}/>}
+                 <CardItens key={character.id}  onClick={handleDescription}>
+              <img 
+               src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+               alt={`Foto do ${character.name}`} />
+               <span>{character.name}</span>
+               <button className="car" type="button"> <BsFillCartCheckFill /></button>
+               
+              </CardItens>
+              {cardDescription && 
+              <ContainerDescription >
+              
+              <CardDescriptions  >
+                  <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
+                  <div className="descriptions">
+                    <button type="button" onClick={handleDescription}>X</button>
+                    <h2>{character.name}</h2>
+                    <p>{character.description}</p>
+                  </div>
+              </CardDescriptions>
+              
+            </ContainerDescription>
+              }
+              
                  </>
               )
             })}
-         </>
-       )}
   
-     
-      
-    
-      
     </Container>
     </>
   )
