@@ -43,9 +43,11 @@ export const CardCharacter = () => {
     }
   }, [characters]);
 
+
+
   return(
     <>
-     
+    
      <Search setCharacters={setCharacters}/>
 
     <Container>
@@ -69,7 +71,7 @@ export const CardCharacter = () => {
                       <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
                       <div className="descriptions">
                           <button type="button" onClick={handleDescription}>X</button>
-                          <h2>{character.name}</h2>
+                          <h2>{character.description}</h2>
                           <p>{character.description}</p>
                       </div>
                   </CardDescriptions>

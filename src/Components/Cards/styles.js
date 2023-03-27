@@ -10,20 +10,14 @@ flex-wrap: wrap;
 gap: 5px;
 
 
-img {
-  width: 135px;
-  height: 135px;
-  border-radius: 50%;
-  border: 2px solid red;
-  
-}
+
 
 `
 export const CardItens = styled.li` 
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: space-around;
+justify-content: space-between;
 border:1px solid red;
 height: 250px;
 width: 150px;
@@ -32,6 +26,15 @@ text-align: center;
 border-radius: 5%;
 background-color: ${({ theme }) => theme.colors.primaryBg};
 margin: 10px;
+padding-bottom: 10px;
+
+
+img {
+  width: 100%;
+  height: 70%;
+  border-bottom: 1px solid red;
+  border-radius: 5% 5% 0% 0%;
+}
 
 .car {
   width: 50%;
@@ -63,7 +66,7 @@ width: 70vw;
 
 height: 50vh;
 background-color: ${({ theme }) => theme.colors.primaryBg};
-border: 1px solid red;
+
 border-radius: 5%;
 display: flex;
 
@@ -73,6 +76,8 @@ display: flex;
 img {
  max-width: 50%;
  height:100%;
+ 
+ border-radius: 5% 0% 0% 5%;
  
 }
 
@@ -86,5 +91,8 @@ img {
 
 }
 
+@media (min-width: 700px) {
+width: 50vw;
+}
 
 `

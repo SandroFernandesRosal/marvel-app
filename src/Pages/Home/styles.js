@@ -8,11 +8,22 @@ align-items: center;
 margin: 130px 0px 0px 0px;
 
 .more {
-  width: 150px;
+  cursor: pointer;
+  width: 40%;
+  height:35px;
+  border-radius: 20px;
+  border: 1px solid red;
+  outline: none;
+  text-align: center;
+  background-color: ${({ theme }) => theme.colors.primaryBg};
+  color: ${({ theme }) => theme.colors.primaryTextColor};
+  margin: 40px 0;
+
+}
+
+.more:hover {
+  background-color: red;
   
-  height: 30px;
-  border-radius: 10%;
-  border: red;
 }
 
 `
