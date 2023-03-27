@@ -26,4 +26,9 @@ margin: 130px 0px 0px 0px;
   
 }
 
+.linkTo {
+  width: 100vw;
+height: 40px;
+}
+
 `

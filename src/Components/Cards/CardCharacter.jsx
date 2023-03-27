@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { Container, ContainerDescription, CardDescriptions, CardItens } from "./styles";
+import { Container, ContainerDescription, CardDescriptions, CardItens, ButtonCar } from "./styles";
 import api from "../../Services/api";
-import { BsFillCartCheckFill } from "react-icons/bs";
+import { BsFillCartCheckFill, BsPlus, BsDash} from "react-icons/bs";
 import { Search } from "../Search/Search";
 import { useCallback } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -11,11 +12,28 @@ export const CardCharacter = () => {
 
   const [characters, setCharacters ] = useState([]);
   const [ cardDescription, setCardDescription ] = useState(false);
+  const [ car, setCar ] = useState(false);
+  const [ acountCar, setAcountCar ] = useState(0);
   
   const handleDescription = () => {
     cardDescription === false ? setCardDescription(true) : setCardDescription(false);
   }
 
+  const handleCar = () => {
+    setCar(true);
+    
+  }
+
+  const addAcountCar = () => {
+    setAcountCar(acountCar + 1);
+  }
+
+  const removeAcountCar = () => {
+    setAcountCar(acountCar - 1);
+    if(acountCar === 1) {
+      setCar(false);
+    }
+  }
 
   useEffect(() => {
     api
@@ -62,7 +80,11 @@ export const CardCharacter = () => {
                       alt={`Foto do ${character.name}`} />
                     <span>{character.name}</span>
                       
-                    <button className="car" type="button"> <BsFillCartCheckFill /></button>
+                    <button 
+                            className="car"
+                            type="button">
+                            <BsDash onClick={removeAcountCar} /> <BsFillCartCheckFill /> <BsPlus onClick={() => {handleCar(), addAcountCar()}} />
+                    </button>
                
             </CardItens>
 
@@ -73,7 +95,11 @@ export const CardCharacter = () => {
                       <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
                       
                       <div className="descriptions">
-                          <button type="button" onClick={handleDescription}>X</button>
+                          <button 
+                              type="button" 
+                              onClick={handleDescription}>
+                              X
+                          </button>
                           <h2>{character.name}</h2>
                           <span>{character.description}</span>
 
@@ -86,9 +112,12 @@ export const CardCharacter = () => {
 </>
               )
          })}
+
+
      
     </Container>
     <button className="more" onClick={handleMore}> Mais Personagens</button>
+    {car &&  <Link className="linkTo" to="/carrinho"><ButtonCar><div>{acountCar}</div><BsFillCartCheckFill /></ButtonCar></Link>}
     </>
   )
 }

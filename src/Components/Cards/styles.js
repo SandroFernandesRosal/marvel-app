@@ -48,11 +48,16 @@ img:hover {
 
 .car {
   width: 50%;
-  cursor: pointer;
+  
   border: none;
   outline: none;
   border-radius: 5px;
   color: red;
+}
+
+.car svg {
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .car:hover {
@@ -116,3 +121,22 @@ width: 50vw;
 }
 
 `
+
+export const ButtonCar = styled.button`
+width: 100vw;
+height: 40px;
+bottom: 0;
+border: none;
+outline: none;
+background-color: rgba(255, 0, 0, 0.7);
+color: white;
+position: fixed;
+border-radius: 25px 25px 0px 0px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+
+
+`
+

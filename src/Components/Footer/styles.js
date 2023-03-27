@@ -6,6 +6,6 @@ justify-content: center;
 align-items: center;
 background-color: ${({ theme }) => theme.colors.primaryBg};
 color: ${({ theme }) => theme.colors.primaryTextColor};
-height: 80px;
+height: 40px;
 
 `
