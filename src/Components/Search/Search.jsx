@@ -16,7 +16,7 @@ useEffect(() => {
       
  
       api
-      .get(`/characters${extension}${search}/`)
+      .get(`/characters${extension}${search}`)
       .then(response =>  {
          setCharacters(response.data.data.results);
         console.log(response.data.data.results)

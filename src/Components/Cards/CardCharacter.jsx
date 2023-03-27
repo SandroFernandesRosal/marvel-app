@@ -19,7 +19,7 @@ export const CardCharacter = () => {
 
   useEffect(() => {
     api
-      .get('/characters')
+      .get('/characters/')
       .then( response => {
         setCharacters(response.data.data.results);
         
