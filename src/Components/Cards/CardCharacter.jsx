@@ -60,6 +60,7 @@ export const CardCharacter = () => {
                       src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
                       alt={`Foto do ${character.name}`} />
                       <span>{character.name}</span>
+                      
                       <button className="car" type="button"> <BsFillCartCheckFill /></button>
                
             </CardItens>
@@ -69,10 +70,12 @@ export const CardCharacter = () => {
               
                   <CardDescriptions  >
                       <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
+                      
                       <div className="descriptions">
                           <button type="button" onClick={handleDescription}>X</button>
-                          <h2>{character.description}</h2>
-                          <p>{character.description}</p>
+                          <h2>{character.name}</h2>
+                          <span>{character.description}</span>
+
                       </div>
                   </CardDescriptions>
               

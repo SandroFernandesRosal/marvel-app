@@ -4,12 +4,19 @@ import { Container } from "./styles";
 export const Search = ({setCharacters}) => {
 
   const [search, setSearch] = useState('')
+  const [extension, setExtension ] = useState('')
+
+useEffect(() => {
+  setExtension('?nameStartsWith=')
+},[search])
   
- useEffect(()=>{
+ useEffect(() => {
+
+  
       
  
       api
-      .get(`/characters?nameStartsWith=${search}`)
+      .get(`/characters${extension}${search}`)
       .then(response =>  {
          setCharacters(response.data.data.results);
         console.log(response.data.data.results)

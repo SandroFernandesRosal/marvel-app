@@ -88,7 +88,7 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-
+  
 }
 
 @media (min-width: 700px) {
