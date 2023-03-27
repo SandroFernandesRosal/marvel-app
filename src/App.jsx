@@ -3,14 +3,14 @@ import { ThemeProvider } from "styled-components";
 import { GloballStyles } from "./Themes/GlobalStyles";
 import { AppRoutes } from "./Routes/Approutes";
 import usePersistedState from "./Hooks/usePersistedState";
-import dark from "./themes/dark";
-import light from "./themes/light";
+import { dark } from "./Themes/dark";
+import { light } from "./Themes/light";
 
 
 
 
 function App() {
-  const [ theme, setTheme ] = usePersistedState('theme',dark);
+  const [ theme, setTheme ] = usePersistedState('theme', dark);
 
   const handleChangeTheme = () => {
     
