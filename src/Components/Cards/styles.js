@@ -21,12 +21,17 @@ justify-content: space-between;
 border:1px solid red;
 height: 250px;
 width: 150px;
-cursor: pointer;
+
 text-align: center;
 border-radius: 5%;
 background-color: ${({ theme }) => theme.colors.primaryBg};
 margin: 10px;
 padding-bottom: 10px;
+
+:hover {
+  border: 1px solid green;
+}
+
 
 
 img {
@@ -34,10 +39,25 @@ img {
   height: 70%;
   border-bottom: 1px solid red;
   border-radius: 5% 5% 0% 0%;
+  cursor: pointer;
+}
+
+img:hover {
+  border-bottom: 1px solid green;
 }
 
 .car {
   width: 50%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: red;
+}
+
+.car:hover {
+ background-color: red;
+ color: white;
 }
 
 `

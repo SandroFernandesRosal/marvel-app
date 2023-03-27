@@ -53,15 +53,16 @@ export const CardCharacter = () => {
     <Container>
         
     {characters.map(character => {
-              return( 
+        return( 
 <>
-            <CardItens key={character.id}  onClick={handleDescription}>
-                      <img 
+            <CardItens key={character.id}  >
+                    <img 
+                      onClick={handleDescription}
                       src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
                       alt={`Foto do ${character.name}`} />
-                      <span>{character.name}</span>
+                    <span>{character.name}</span>
                       
-                      <button className="car" type="button"> <BsFillCartCheckFill /></button>
+                    <button className="car" type="button"> <BsFillCartCheckFill /></button>
                
             </CardItens>
 
