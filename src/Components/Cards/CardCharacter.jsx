@@ -19,7 +19,7 @@ export const CardCharacter = () => {
 
   useEffect(() => {
     api
-      .get('/characters/')
+      .get('/characters')
       .then( response => {
         setCharacters(response.data.data.results);
         
@@ -30,7 +30,7 @@ export const CardCharacter = () => {
   const handleMore = useCallback( async () => {
     try {
       const offset = characters.length;
-      const response = await api.get('characters', {
+      const response = await api.get('/characters', {
         params: {
           offset,
         },
