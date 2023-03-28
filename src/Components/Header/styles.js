@@ -82,6 +82,7 @@ background-color: rgba(100, 100, 100, 0.1);
   display: flex;
  flex-direction: column;
  justify-content: center;
+ 
  height: 100%;
  text-align: center;
  
@@ -89,8 +90,13 @@ background-color: rgba(100, 100, 100, 0.1);
 
 li {
   margin: 5px;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bold;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
 li:hover {

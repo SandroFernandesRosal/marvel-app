@@ -1,12 +1,17 @@
-import { Menu } from "./styles"
-export const MenuMobile = ({ menu, }) => {
+import { Menu } from "./styles";
+import { Link } from "react-router-dom";
+
+export const MenuMobile = ({ menu, handleMenu }) => {
 
   return(
     <Menu>
       
-      <ul>
-        <li>Meu Carrinho</li>
-        <li>Minhas Compras</li>
+      <ul >
+        <Link to="/"> <li onClick={handleMenu}>Charactes</li> </Link>
+        <Link to="/comics"> <li onClick={handleMenu}>Comics</li> </Link>
+        <Link to="/carrinho"> <li onClick={handleMenu}>Meu Carrinho</li> </Link>
+        <Link to="/carrinho"> <li onClick={handleMenu}>Minhas Compras</li> </Link>
+      
       </ul>
     </Menu>
   )
