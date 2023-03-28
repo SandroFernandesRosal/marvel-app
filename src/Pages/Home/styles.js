@@ -31,4 +31,19 @@ margin: 130px 0px 0px 0px;
 height: 40px;
 }
 
+.linkTo svg {
+  font-size: 30px;
+}
+
+.countCar {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 `

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, ContainerDescription, CardDescriptions, CardItens, ButtonCar } from "./styles";
 import api from "../../Services/api";
-import { BsFillCartCheckFill, BsPlus, BsDash} from "react-icons/bs";
+import { BsFillCartCheckFill, BsPlus, BsDash } from "react-icons/bs";
 import { Search } from "../Search/Search";
 import { useCallback } from "react";
 import { Link } from "react-router-dom";
@@ -34,6 +34,8 @@ export const CardCharacter = () => {
       setCar(false);
     }
   }
+
+  
 
   useEffect(() => {
     api
@@ -79,6 +81,7 @@ export const CardCharacter = () => {
                       src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
                       alt={`Foto do ${character.name}`} />
                     <span>{character.name}</span>
+                    
                       
                     <button 
                             className="car"
@@ -117,7 +120,7 @@ export const CardCharacter = () => {
      
     </Container>
     <button className="more" onClick={handleMore}> Mais Personagens</button>
-    {car &&  <Link className="linkTo" to="/carrinho"><ButtonCar><div>{acountCar}</div><BsFillCartCheckFill /></ButtonCar></Link>}
+    {car &&  <Link className="linkTo" to="/carrinho"><ButtonCar><div className="countCar">{acountCar}</div><BsFillCartCheckFill /></ButtonCar></Link>}
     </>
   )
 }

@@ -1,6 +1,7 @@
 import api from "../../Services/api";
 import { useState, useEffect } from "react";
 import { Container } from "./styles";
+
 export const Search = ({setCharacters}) => {
 
   const [search, setSearch] = useState('')
