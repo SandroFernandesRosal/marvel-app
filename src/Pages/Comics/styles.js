@@ -19,8 +19,8 @@ flex-direction: column;
 align-items: center;
 justify-content: space-between;
 border:1px solid red;
-height: 250px;
-width: 150px;
+height: 450px;
+width: 250px;
 
 text-align: center;
 border-radius: 5%;
@@ -36,7 +36,7 @@ padding-bottom: 10px;
 
 img {
   width: 100%;
-  height: 70%;
+  height: 80%;
   border-bottom: 1px solid red;
   border-radius: 5% 5% 0% 0%;
   cursor: pointer;
