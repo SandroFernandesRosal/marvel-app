@@ -1,8 +1,8 @@
 import { Container } from "./styles";
 import { MenuMobile } from "./MenuMobile";
 import { useState } from "react";
-import Switch from "react-switch";
-import { BsFillSunFill, BsFillMoonFill, BsSunFill, BsMoonStarsFill } from 'react-icons/bs';
+
+import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 import {GiHamburgerMenu} from "react-icons/gi";
 import Logo from '../../IMG/Marvel-Comics-logo.png';
 import {AiOutlineClose} from "react-icons/ai";
@@ -38,7 +38,7 @@ const changeIcon = () => {
        </button>
 
     </Container>
-    {menu && <MenuMobile handleMenu={handleMenu} menu={menu} /> }
+    {menu && <MenuMobile handleMenu={handleMenu} /> }
     </> 
     
   )

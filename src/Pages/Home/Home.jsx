@@ -1,18 +1,14 @@
 import { Container } from "./styles";
-import { CardCharacter } from "../../Components/Cards/CardCharacter";
+import { Characters } from "../Characters/Characters";
 
 
 
-export const Home = () => {
+export const Home = ({characters, setCharacters, handleAddItemToCart, car, acountCar}) => {
   
-  
-
-
   return(
     <Container>
       
-
-      <CardCharacter  /> 
+      <Characters characters={characters} setCharacters={setCharacters} handleAddItemToCart={handleAddItemToCart} car={car} acountCar={acountCar}  /> 
       
     </Container>
   )

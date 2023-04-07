@@ -18,32 +18,32 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: space-between;
-border:1px solid red;
+
 height: 450px;
 width: 250px;
 
 text-align: center;
-border-radius: 5%;
-background-color: ${({ theme }) => theme.colors.primaryBg};
+
+background-color: transparent;
 margin: 10px;
 padding-bottom: 10px;
 
-:hover {
-  border: 1px solid green;
-}
+
 
 
 
 img {
   width: 100%;
   height: 80%;
-  border-bottom: 1px solid red;
-  border-radius: 5% 5% 0% 0%;
+  
+  border: 1px solid ${({ theme }) => theme.colors.primaryColor};
   cursor: pointer;
+  box-shadow: 0 4px 4px -2px ${({ theme }) => theme.colors.primaryColor} ;
 }
 
 img:hover {
-  border-bottom: 1px solid green;
+  transition:  0.5s;
+  transform: scale(1.1)
 }
 
 .car {

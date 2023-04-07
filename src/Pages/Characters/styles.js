@@ -7,62 +7,76 @@ justify-content: center;
 align-items: center;
 list-style: none;
 flex-wrap: wrap;
-gap: 5px;
-
-
 
 
 `
-export const CardItens = styled.li` 
+export const CardItem = styled.li` 
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: space-between;
-border:1px solid red;
-height: 250px;
-width: 150px;
 
+box-shadow: 0 4px 4px -2px ${({ theme }) => theme.colors.primaryColor} ;
+height: 300px;
+width: 150px;
+border: 1px solid ${({ theme }) => theme.colors.primaryColor};
 text-align: center;
-border-radius: 5%;
+border-radius:0% 0% 10% 0%;
 background-color: ${({ theme }) => theme.colors.primaryBg};
-margin: 10px;
-padding-bottom: 10px;
+margin: 6px;
+
 
 :hover {
-  border: 1px solid green;
+  transition: 0.8s;
+  background-color: red;
+  
 }
-
 
 
 img {
-  width: 100%;
-  height: 70%;
-  border-bottom: 1px solid red;
-  border-radius: 5% 5% 0% 0%;
-  cursor: pointer;
+ width: 100%;
+ border-bottom: 3px solid red;
+ flex: 1;
+ cursor: pointer;
 }
 
 img:hover {
-  border-bottom: 1px solid green;
+  transition:  0.5s;
+  transform: scale(1.1)
+  
+}
+
+.container-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  flex: 1;
+  align-items: center;
+  
 }
 
 .car {
-  width: 50%;
   
+  width: 100px;
   border: none;
   outline: none;
   border-radius: 5px;
   color: red;
+  cursor: pointer;
 }
 
 .car svg {
   font-size: 20px;
-  cursor: pointer;
+  
 }
 
 .car:hover {
- background-color: red;
- color: white;
+ color: green;
+}
+
+@media (min-width: 700px) {
+  height: 350px;
+width: 200px;
 }
 
 `

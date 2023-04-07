@@ -7,10 +7,9 @@ import { dark } from "./Themes/dark";
 import { light } from "./Themes/light";
 
 
-
-
 function App() {
   const [ theme, setTheme ] = usePersistedState('theme', dark);
+  
 
   const handleChangeTheme = () => {
     
@@ -19,6 +18,7 @@ function App() {
   }
 
   return (
+    
     <ThemeProvider theme={theme}>
         
             <GloballStyles/>
@@ -26,6 +26,7 @@ function App() {
             <AppRoutes handleChangeTheme={handleChangeTheme} theme={theme} />
       
     </ThemeProvider>
+   
   )
 }
 
