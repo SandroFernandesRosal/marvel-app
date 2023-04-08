@@ -2,14 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.ul`
 display: flex;
-margin-top: 70px;
+margin: 70px 0px;
 justify-content: center;
 align-items: center;
 list-style: none;
 flex-wrap: wrap;
 gap: 5px;
-
-
+overflow: hidden;
 
 
 `
@@ -26,26 +25,27 @@ margin: 10px;
 
 img {
   width: 100%;
-  height: 70%;
+  height: 63%;
   
   border: 1px solid ${({ theme }) => theme.colors.primaryColor};
   cursor: pointer;
   box-shadow: 0 4px 4px -2px ${({ theme }) => theme.colors.primaryColor} ;
 }
 
-img:hover {
+:hover {
   transition:  0.5s;
-  transform: scale(1.1)
+  transform: scale(1.05)
 }
 
 .container-title {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 15px;
   width: 100%;
   flex: 1;
   align-items: center;
+  padding-top: 20px;
   
 }
 

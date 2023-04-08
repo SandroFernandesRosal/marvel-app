@@ -16,7 +16,7 @@ flex-direction: column;
 align-items: center;
 
 box-shadow: 0 4px 4px -2px ${({ theme }) => theme.colors.primaryColor} ;
-height: 350px;
+height: 300px;
 width: 150px;
 border: 1px solid ${({ theme }) => theme.colors.primaryColor};
 text-align: center;
@@ -35,7 +35,7 @@ margin: 10px;
 img {
  width: 100%;
  border-bottom: 3px solid red;
- flex: 1;
+ flex: 1.5;
  cursor: pointer;
  
 }

@@ -31,9 +31,9 @@ export const Cart = ({cart, handleRemoveItemFromCart, cartComics, handleRemoveCo
 
     {cart.length > 0 &&
       <h3>
-        {cart.length} 
-        {cart.length > 1 ? "Personagens" : "Personagem"} 
-        {cart.length > 1 ? "adicionados" : "adicionado"} ao carrinho
+        <span>{cart.length} </span>
+        <span>{cart.length > 1 ? "Personagens" : "Personagem"} </span>
+        <span>{cart.length > 1 ? "adicionados" : "adicionado"} ao carrinho</span>
       </h3>
     }
      
@@ -65,9 +65,9 @@ export const Cart = ({cart, handleRemoveItemFromCart, cartComics, handleRemoveCo
 
 {cartComics.length > 0 && 
   <h3>
-      {cartComics.length}
-      {cartComics.length > 1 ? "Quadrinhos" : "Quadrinho"}
-      {cartComics.length > 1 ? "adicionados" : "adicionado"} ao carrinho
+      <span>{cartComics.length} </span>
+      <span>{cartComics.length > 1 ? "Quadrinhos" : "Quadrinho"} </span>
+      <span>{cartComics.length > 1 ? "adicionados" : "adicionado"} ao carrinho</span>
   </h3>
 }
 

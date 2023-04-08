@@ -9,6 +9,7 @@ align-items: center;
 flex-wrap: wrap;
 
 
+
 `
 
 export const ContainerCharacters = styled.ul`
@@ -41,7 +42,7 @@ flex-wrap: wrap;
 justify-content: center;
 align-items: center;
 margin-bottom: 30px;
-
+overflow: hidden;
 button {
   width: 50px;
   border: none;
