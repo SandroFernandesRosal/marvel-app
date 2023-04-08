@@ -10,6 +10,7 @@ import {AiOutlineClose} from "react-icons/ai";
 
 
 
+
 export const Comics = ({comics, setComics, handleComicsAddItemToCart, car, acountCar }) => {
  const [ comicsDescription, setComicsDescription ] = useState(false);
   

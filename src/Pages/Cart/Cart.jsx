@@ -1,12 +1,30 @@
 import { Container} from "./styles";
 import { CardItem } from "../Characters/styles";
 import { CardItens } from "../Comics/styles";
-import { ContainerCharacters, ContainerComics } from "./styles";
+import { ContainerCharacters, ContainerComics, Buy } from "./styles";
 import { BsCartXFill } from 'react-icons/bs'
+import { useState, useEffect } from "react";
 
 
-export const Cart = ({cart, handleRemoveItemFromCart, cartComics, handleRemoveComicsFromCart}) => {
- 
+export const Cart = ({cart, handleRemoveItemFromCart, cartComics, handleRemoveComicsFromCart, setCart, setCartComics, setCar, setAcountCar}) => {
+ const [buy, setBuy ] = useState(false);
+
+ const handleBuy = () => {
+  setBuy(true)
+  setCart([]);
+  setCartComics([]);
+  setAcountCar(0);
+  setCar(false);
+
+ }
+
+ useEffect(() => {
+  const interval = setInterval(() => {
+    setBuy(false);
+  }, 3000);
+  
+  return () => clearInterval(interval);
+}, []);
 
   return(
     <Container>
@@ -50,6 +68,7 @@ export const Cart = ({cart, handleRemoveItemFromCart, cartComics, handleRemoveCo
                       alt={`Foto do ${comic.title}`} />
                     <span>{comic.title}</span>
                     <button onClick={() => handleRemoveComicsFromCart(index)}><BsCartXFill /></button>
+                    <button onClick={() => handleBuy()}>Comprar</button>
         </CardItens>
         )
       })}
@@ -59,6 +78,8 @@ export const Cart = ({cart, handleRemoveItemFromCart, cartComics, handleRemoveCo
       }
      
      </ContainerComics> 
+
+     {buy && <Buy ><h2>Compra finalizada com sucesso </h2> </Buy>}
      
     </Container>
   )

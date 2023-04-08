@@ -90,7 +90,7 @@ function handleRemoveComicsFromCart(index) {
           <Routes>
             <Route element={<Home characters={characters} setCharacters={setCharacters} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} car={car} setCar={setCar} acountCar={acountCar} setAcountCar={setAcountCar} />} path="/" exact />
             <Route element={<Comics comics={comics} setComics={setComics} handleComicsAddItemToCart={handleComicsAddItemToCart} car={car} setCar={setCar} acountCar={acountCar} setAcountCar={setAcountCar} />} path="/comics" />
-            <Route  element={<Cart cart={cart} handleRemoveItemFromCart={handleRemoveItemFromCart} cartComics={cartComics} handleRemoveComicsFromCart={handleRemoveComicsFromCart} />} path="/carrinho" />
+            <Route  element={<Cart cart={cart} handleRemoveItemFromCart={handleRemoveItemFromCart} cartComics={cartComics} handleRemoveComicsFromCart={handleRemoveComicsFromCart} setCart={setCart} setCartComics={setCartComics} setCar={setCar} setAcountCar={setAcountCar} />} path="/carrinho" />
             
           </Routes>
       <Footer />

@@ -56,3 +56,18 @@ button svg:hover {
   color: green;
 }
 `
+
+export const Buy = styled.div`
+width: 100vw;
+height: 50vh;
+position: absolute;
+z-index: 999;
+display: flex;
+justify-content: center;
+align-items: center;
+backdrop-filter: blur(8px);
+background-color: rgba(100, 100, 100, 0.1);
+
+
+
+`
