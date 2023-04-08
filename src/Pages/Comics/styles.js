@@ -23,13 +23,10 @@ width: 200px;
 text-align: center;
 background-color: transparent;
 margin: 10px;
-padding-bottom: 10px;
-
-
 
 img {
   width: 100%;
-  height: 65%;
+  height: 70%;
   
   border: 1px solid ${({ theme }) => theme.colors.primaryColor};
   cursor: pointer;
@@ -44,8 +41,8 @@ img:hover {
 .container-title {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 8px;
+  justify-content: flex-end;
+  gap: 15px;
   width: 100%;
   flex: 1;
   align-items: center;
