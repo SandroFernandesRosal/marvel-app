@@ -19,7 +19,7 @@ flex-direction: column;
 align-items: center;
 justify-content: space-between;
 height: 400px;
-width: 200px;
+width: 150px;
 text-align: center;
 background-color: transparent;
 margin: 10px;
@@ -78,6 +78,10 @@ img:hover {
 .buttons button {
   flex: 1;
   
+}
+
+@media (min-width: 700px) {
+width: 200px;
 }
 
 `

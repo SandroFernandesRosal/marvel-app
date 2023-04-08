@@ -17,12 +17,12 @@ align-items: center;
 
 box-shadow: 0 4px 4px -2px ${({ theme }) => theme.colors.primaryColor} ;
 height: 350px;
-width: 200px;
+width: 150px;
 border: 1px solid ${({ theme }) => theme.colors.primaryColor};
 text-align: center;
 border-radius:0% 0% 10% 0%;
 background-color: ${({ theme }) => theme.colors.primaryBg};
-margin: 5px;
+margin: 10px;
 
 
 :hover {
@@ -77,7 +77,7 @@ img:hover {
 
 @media (min-width: 700px) {
   height: 350px;
-width: 200px;
+  width: 200px;
 }
 
 `
