@@ -19,17 +19,14 @@ flex-direction: column;
 align-items: center;
 justify-content: space-between;
 
-height: 450px;
-width: 250px;
+height: 400px;
+width: 200px;
 
 text-align: center;
 
 background-color: transparent;
 margin: 10px;
 padding-bottom: 10px;
-
-
-
 
 
 img {
@@ -44,6 +41,16 @@ img {
 img:hover {
   transition:  0.5s;
   transform: scale(1.1)
+}
+
+.container-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  flex: 1;
+  align-items: center;
+  
 }
 
 .car {
@@ -63,6 +70,18 @@ img:hover {
 .car:hover {
  background-color: red;
  color: white;
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  gap: 5px;
+}
+
+.buttons button {
+  flex: 1;
+  
 }
 
 `

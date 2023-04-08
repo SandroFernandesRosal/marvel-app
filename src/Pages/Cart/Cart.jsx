@@ -67,8 +67,10 @@ export const Cart = ({cart, handleRemoveItemFromCart, cartComics, handleRemoveCo
                       src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                       alt={`Foto do ${comic.title}`} />
                     <span>{comic.title}</span>
+                    <div className="buttons">
                     <button onClick={() => handleRemoveComicsFromCart(index)}><BsCartXFill /></button>
                     <button onClick={() => handleBuy()}>Comprar</button>
+                    </div>
         </CardItens>
         )
       })}

@@ -16,13 +16,13 @@ flex-direction: column;
 align-items: center;
 
 box-shadow: 0 4px 4px -2px ${({ theme }) => theme.colors.primaryColor} ;
-height: 300px;
-width: 150px;
+height: 400px;
+width: 200px;
 border: 1px solid ${({ theme }) => theme.colors.primaryColor};
 text-align: center;
 border-radius:0% 0% 10% 0%;
 background-color: ${({ theme }) => theme.colors.primaryBg};
-margin: 6px;
+margin: 10px;
 
 
 :hover {
@@ -37,6 +37,7 @@ img {
  border-bottom: 3px solid red;
  flex: 1;
  cursor: pointer;
+ 
 }
 
 img:hover {
@@ -71,6 +72,7 @@ img:hover {
 }
 
 .car:hover {
+ background-color: green;
  color: green;
 }
 

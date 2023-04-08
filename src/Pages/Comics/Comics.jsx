@@ -57,14 +57,16 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, car, acoun
                       onClick={handleDescriptionComics}
                       src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                       alt={`Foto do ${comic.name}`} />
-                    <span>{comic.title}</span>
                     
+                    
+                    <div className="container-title">
+                    <span>{comic.title}</span>
                     <button 
                             className="car"
                             type="button" onClick={() => {handleComicsAddItemToCart(comic.title, comic.thumbnail)}}>
                              <BsFillCartCheckFill  /> 
                     </button>
-               
+                    </div>
             </CardItens>
 
     {comicsDescription && 
