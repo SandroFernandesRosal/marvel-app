@@ -18,6 +18,12 @@ z-index: 999;
 
 }
 
+.button-theme {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
 .sun {
   color: yellow;
   font-size:25px;

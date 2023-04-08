@@ -27,7 +27,7 @@ const changeIcon = () => {
        
        <img src={Logo} alt="Logo" className="logo"/>
        
-       <button onClick={() => {handleChangeTheme(); changeIcon()} }> 
+       <button className="button-theme" onClick={() => {handleChangeTheme(); changeIcon()} }> 
        
        {icon === false ? <BsFillSunFill className="sun" /> : <BsFillMoonFill className="moon"/> }
        
