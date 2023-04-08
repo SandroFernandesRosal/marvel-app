@@ -16,13 +16,13 @@ flex-direction: column;
 align-items: center;
 
 box-shadow: 0 4px 4px -2px ${({ theme }) => theme.colors.primaryColor} ;
-height: 400px;
+height: 350px;
 width: 200px;
 border: 1px solid ${({ theme }) => theme.colors.primaryColor};
 text-align: center;
 border-radius:0% 0% 10% 0%;
 background-color: ${({ theme }) => theme.colors.primaryBg};
-margin: 10px;
+margin: 5px;
 
 
 :hover {
