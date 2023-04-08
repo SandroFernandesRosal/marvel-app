@@ -13,10 +13,11 @@ export const CartButton = ({cart, cartComics}) => {
 
               
 
-              {cart.length > 0 & cartComics.length > 0 ? <p>e</p> : null}
+              
 
          </> : null
     }
+
 
     
 {cart.length > 0 ?
@@ -24,7 +25,7 @@ export const CartButton = ({cart, cartComics}) => {
               <p className="cartnumber">{cart.length}</p>
               <p>{cart.length > 1 ? "Personagens" : "Personagem"} </p>
 
-              {cart.length > 0 & cartComics.length > 0 ? <p>e</p> : null}
+              
               
             </> : null
             }
