@@ -12,7 +12,7 @@ export const AppRoutes = ({handleChangeTheme, theme}) => {
   const [characters, setCharacters ] = useState([]);
   const [cart, setCart ] =useState([]);
   const [ car, setCar ] = useState(false);
-  const [ acountCar, setAcountCar ] = useState(0);
+  
 
   const [comics, setComics ] = useState([]);
   const [cartComics, setCartComics ] = useState([]);
@@ -88,9 +88,45 @@ function handleRemoveComicsFromCart(index) {
    <BrowserRouter>
       <Header handleChangeTheme={handleChangeTheme} theme={theme} />
           <Routes>
-            <Route element={<Home characters={characters} setCharacters={setCharacters} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} car={car} setCar={setCar} acountCar={acountCar} setAcountCar={setAcountCar} />} path="/" exact />
-            <Route element={<Comics comics={comics} setComics={setComics} handleComicsAddItemToCart={handleComicsAddItemToCart} car={car} setCar={setCar} acountCar={acountCar} setAcountCar={setAcountCar} />} path="/comics" />
-            <Route  element={<Cart cart={cart} handleRemoveItemFromCart={handleRemoveItemFromCart} cartComics={cartComics} handleRemoveComicsFromCart={handleRemoveComicsFromCart} setCart={setCart} setCartComics={setCartComics} setCar={setCar} setAcountCar={setAcountCar} />} path="/carrinho" />
+            <Route element={
+              <Home 
+                  characters={characters} 
+                  setCharacters={setCharacters} 
+                  handleAddItemToCart={handleAddItemToCart} 
+                  handleRemoveItemFromCart={handleRemoveItemFromCart} 
+                  car={car} 
+                  setCar={setCar} 
+                  cart={cart} 
+                  cartComics={cartComics}
+              />
+              } path="/" exact
+            />
+
+            <Route element={
+              <Comics 
+                  comics={comics} 
+                  setComics={setComics} 
+                  handleComicsAddItemToCart={handleComicsAddItemToCart} 
+                  car={car} 
+                  setCar={setCar}
+                  cart={cart} 
+                  cartComics={cartComics}
+              />
+              } path="/comics" 
+            />
+
+            <Route  element={
+              <Cart 
+                  cart={cart} 
+                  handleRemoveItemFromCart={handleRemoveItemFromCart} 
+                  cartComics={cartComics} 
+                  handleRemoveComicsFromCart={handleRemoveComicsFromCart} 
+                  setCart={setCart} 
+                  setCartComics={setCartComics} 
+                  setCar={setCar} 
+              />
+             } path="/carrinho" 
+            />
             
           </Routes>
       <Footer />

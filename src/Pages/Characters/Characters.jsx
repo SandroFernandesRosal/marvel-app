@@ -1,15 +1,17 @@
-import { useState, useEffect } from "react";
-import { Container, ContainerDescription, ButtonCar } from "./styles";
+import { useState} from "react";
+import { Container} from "./styles";
 import api from "../../Services/api";
-import { BsFillCartCheckFill } from "react-icons/bs";
+
 import { Search } from "../../Components/Search/Search";
 import { useCallback } from "react";
-import { Link } from "react-router-dom";
+
 import { CardCharacter } from "../../Components/Cards/CardCharacter";
+import { CartButton } from "../../Components/CartButton/CartButton";
 
 
 
-export const Characters = ({characters, setCharacters, handleAddItemToCart, handleRemoveItemFromCart, car,  acountCar}) => {
+
+export const Characters = ({characters, setCharacters, handleAddItemToCart, handleRemoveItemFromCart, car, cart, cartComics}) => {
 
   const [ cardDescription, setCardDescription ] = useState(false);
  
@@ -67,17 +69,8 @@ export const Characters = ({characters, setCharacters, handleAddItemToCart, hand
                 </button>
 
                 {car &&  
-                  <Link 
-                      className="linkTo"
-                      to="/carrinho">
-                        <ButtonCar>
-                          <div className="countCar">
-                            {acountCar}
-                          </div>
-                        <BsFillCartCheckFill />
-                        </ButtonCar>
-                  </Link>
-                }
+      <CartButton cart={cart} cartComics={cartComics} />
+     }
 </>
   )
 }

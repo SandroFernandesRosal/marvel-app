@@ -1,17 +1,18 @@
 import { useState} from "react";
-import { Container, ContainerDescription, CardDescriptions, CardItens, ButtonCar, More, SearchContent  } from "./styles";
+import { Container, ContainerDescription, CardDescriptions, CardItens, More, SearchContent  } from "./styles";
 import api from "../../Services/api";
 import { BsFillCartCheckFill, BsPlus, BsDash } from "react-icons/bs";
 import { SearchComics} from "../../Components/Search/SearchComics";
 import { useCallback } from "react";
-import { Link } from "react-router-dom";
+
 import {AiOutlineClose} from "react-icons/ai";
+import { CartButton } from "../../Components/CartButton/CartButton";
 
 
 
 
 
-export const Comics = ({comics, setComics, handleComicsAddItemToCart, car, acountCar }) => {
+export const Comics = ({comics, setComics, handleComicsAddItemToCart, car, cart, cartComics }) => {
  const [ comicsDescription, setComicsDescription ] = useState(false);
   
   
@@ -99,13 +100,8 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, car, acoun
     <More onClick={handleMoreComics}> Mais Personagens</More>
 
     {car &&  
-      <Link className="linkTo" to="/carrinho">
-        <ButtonCar>
-          <div className="countCar">
-            {acountCar}
-          </div><BsFillCartCheckFill />
-          </ButtonCar>
-      </Link>}
-    </>
+      <CartButton cart={cart} cartComics={cartComics} />
+     }
+</>
   )
 }

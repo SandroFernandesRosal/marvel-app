@@ -28,24 +28,33 @@ export const Cart = ({cart, handleRemoveItemFromCart, cartComics, handleRemoveCo
 
   return(
     <Container>
-     <h3>Personagens adicionados ao carrinho</h3>
+
+    {cart.length > 0 &&
+      <h3>
+        {cart.length} 
+        {cart.length > 1 ? "Personagens" : "Personagem"} 
+        {cart.length > 1 ? "adicionados" : "adicionado"} ao carrinho
+      </h3>
+    }
+     
 
      <ContainerCharacters>
      
-      {cart < 1 ? <p>Nenhum personagem adicionado ao carrinho</p> :
+    {cart < 1 ? <p>Nenhum personagem adicionado ao carrinho</p> :
       <>
       {cart.map( (item, index) => {
         return(
           <CardItem key={index}>
                 <img 
-                      
-                      src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                      alt={`Foto do ${item.name}`} />
+                    src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                    alt={`Foto do ${item.name}`} />
 
-          <div className="container-name">
-                <span>{item.name}</span>
-                <button onClick={() => handleRemoveItemFromCart(index)}><BsCartXFill /></button>
-          </div>
+                <div className="container-name">
+                    <span>{item.name}</span>
+                    <button onClick={() => handleRemoveItemFromCart(index)}>
+                      <BsCartXFill />
+                    </button>
+                </div>
           </CardItem>
         )
       })}
@@ -53,19 +62,27 @@ export const Cart = ({cart, handleRemoveItemFromCart, cartComics, handleRemoveCo
       }
 </ContainerCharacters>
 
-<h3>Quadrinhos adicionados ao carrinho</h3>
+
+{cartComics.length > 0 && 
+  <h3>
+      {cartComics.length}
+      {cartComics.length > 1 ? "Quadrinhos" : "Quadrinho"}
+      {cartComics.length > 1 ? "adicionados" : "adicionado"} ao carrinho
+  </h3>
+}
 
 <ContainerComics>
 
-      {cartComics < 1 ? <p>Nenhum Quadrinho adicionado ao carrinho</p> :
-      <>
+      {cartComics < 1 ? 
+        <p>Nenhum Quadrinho adicionado ao carrinho</p> :
+   <>
       {cartComics.map((comic, index) => {
         return(
-        <CardItens key={index}>
-          <img 
-                      
-                      src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-                      alt={`Foto do ${comic.title}`} />
+           <CardItens key={index}>
+
+              <img  
+                    src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                    alt={`Foto do ${comic.title}`} />
 
                     <div className="container-title">
                         <span>{comic.title}</span>
@@ -74,13 +91,11 @@ export const Cart = ({cart, handleRemoveItemFromCart, cartComics, handleRemoveCo
                             <button onClick={() => handleBuy()}>Comprar</button>
                         </div>
                     </div>
-        </CardItens>
-        )
-      })}
-      
-      </>
-      
-      }
+            </CardItens>
+           )
+        })}
+    </>
+    }
      
      </ContainerComics> 
 
