@@ -72,7 +72,6 @@ img:hover {
 }
 
 .car:hover {
- background-color: green;
  color: green;
 }
 

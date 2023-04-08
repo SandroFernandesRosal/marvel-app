@@ -31,7 +31,7 @@ padding-bottom: 10px;
 
 img {
   width: 100%;
-  height: 80%;
+  height: 65%;
   
   border: 1px solid ${({ theme }) => theme.colors.primaryColor};
   cursor: pointer;
@@ -46,7 +46,7 @@ img:hover {
 .container-title {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   height: 100%;
   flex: 1;
   align-items: center;
@@ -54,7 +54,7 @@ img:hover {
 }
 
 .car {
-  width: 50%;
+  width: 100px;
   
   border: none;
   outline: none;
