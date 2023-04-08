@@ -21,14 +21,14 @@ function handleAddItemToCart(name, thumbnail) {
   const itemObject = { name, thumbnail };
   setCart([...cart, itemObject]);
   setCar(true);
-  setAcountCar(acountCar + 1);
+  
 }
 
 function handleComicsAddItemToCart(title, thumbnail) {
   const itemObject = { title, thumbnail };
   setCartComics([...cartComics, itemObject]);
   setCar(true);
-  setAcountCar(acountCar + 1);
+  
  
 }
 
@@ -36,15 +36,9 @@ function handleRemoveItemFromCart(index) {
   const filteredCart = cart.filter(
     (cartItem) => cart.indexOf(cartItem) !== index);
   setCart(filteredCart);
-  setAcountCar(acountCar - 1);
   
-  if(acountCar === 1) {
-    setCar(false);
-  }
+  
 
-  if (acountCar === -1) {
-    setAcountCar(0);
-  }
   
 }
 
@@ -94,8 +88,6 @@ function handleRemoveComicsFromCart(index) {
                   setCharacters={setCharacters} 
                   handleAddItemToCart={handleAddItemToCart} 
                   handleRemoveItemFromCart={handleRemoveItemFromCart} 
-                  car={car} 
-                  setCar={setCar} 
                   cart={cart} 
                   cartComics={cartComics}
               />
@@ -107,8 +99,6 @@ function handleRemoveComicsFromCart(index) {
                   comics={comics} 
                   setComics={setComics} 
                   handleComicsAddItemToCart={handleComicsAddItemToCart} 
-                  car={car} 
-                  setCar={setCar}
                   cart={cart} 
                   cartComics={cartComics}
               />

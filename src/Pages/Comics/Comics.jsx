@@ -12,7 +12,7 @@ import { CartButton } from "../../Components/CartButton/CartButton";
 
 
 
-export const Comics = ({comics, setComics, handleComicsAddItemToCart, car, cart, cartComics }) => {
+export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cartComics }) => {
  const [ comicsDescription, setComicsDescription ] = useState(false);
   
   
@@ -98,10 +98,9 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, car, cart,
 
     </Container>
     <More onClick={handleMoreComics}> Mais Personagens</More>
-
-    {car &&  
-      <CartButton cart={cart} cartComics={cartComics} />
-     }
+  
+  {cart.length > 0 || cartComics.length > 0 ? <CartButton cart={cart} cartComics={cartComics} /> : null }
+    
 </>
   )
 }

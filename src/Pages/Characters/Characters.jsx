@@ -11,7 +11,7 @@ import { CartButton } from "../../Components/CartButton/CartButton";
 
 
 
-export const Characters = ({characters, setCharacters, handleAddItemToCart, handleRemoveItemFromCart, car, cart, cartComics}) => {
+export const Characters = ({characters, setCharacters, handleAddItemToCart, handleRemoveItemFromCart, cart, cartComics}) => {
 
   const [ cardDescription, setCardDescription ] = useState(false);
  
@@ -68,9 +68,7 @@ export const Characters = ({characters, setCharacters, handleAddItemToCart, hand
                   Mais Personagens
                 </button>
 
-                {car &&  
-      <CartButton cart={cart} cartComics={cartComics} />
-     }
+      {cart.length > 0 || cartComics.length > 0 ? <CartButton cart={cart} cartComics={cartComics} /> : null }
 </>
   )
 }

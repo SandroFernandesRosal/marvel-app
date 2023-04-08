@@ -6,23 +6,30 @@ export const CartButton = ({cart, cartComics}) => {
   return(
     <Link className="linkTo" to="/carrinho">
       <ButtonCar>    
-       {cartComics.length > 0 &&
-          <div className="cartitems">
+       {cartComics.length > 0  ?
+          <>
               <p className="cartnumber">{cartComics.length} </p>
-              {cartComics.length > 1 ? "Quadrinhos" : "Quadrinho"}
+              <p>{cartComics.length > 1 ? "Quadrinhos" : "Quadrinho"}</p>
 
-              <p>e</p>
+              
 
-              {cart.length > 0 &&
+              {cart.length > 0 & cartComics.length > 0 ? <p>e</p> : null}
+
+         </> : null
+    }
+
+    
+{cart.length > 0 ?
             <>
               <p className="cartnumber">{cart.length}</p>
               <p>{cart.length > 1 ? "Personagens" : "Personagem"} </p>
+
+              {cart.length > 0 & cartComics.length > 0 ? <p>e</p> : null}
               
-            </>
+            </> : null
             }
-            
-         </div>
-    }
+
+
           
           <BsFillCartCheckFill />
           </ButtonCar>
