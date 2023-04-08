@@ -27,11 +27,11 @@ const changeIcon = () => {
        
        <img src={Logo} alt="Logo" className="logo"/>
        
-       <buttton onClick={() => {handleChangeTheme(); changeIcon()} }> 
+       <button onClick={() => {handleChangeTheme(); changeIcon()} }> 
        
        {icon === false ? <BsFillSunFill className="sun" /> : <BsFillMoonFill className="moon"/> }
        
-        </buttton>
+        </button>
        
        <button tapy="button" onClick={handleMenu} className="menu">
        {menu ===false ?<GiHamburgerMenu /> : <AiOutlineClose />}
