@@ -18,15 +18,13 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: space-between;
-
 height: 400px;
 width: 200px;
-
 text-align: center;
-
 background-color: transparent;
 margin: 10px;
 padding-bottom: 10px;
+
 
 
 img {
@@ -46,8 +44,9 @@ img:hover {
 .container-title {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  height: 100%;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
   flex: 1;
   align-items: center;
   
