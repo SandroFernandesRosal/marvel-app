@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.ul`
 display: flex;
-
+margin: 70px 0px 20px 0px;
 justify-content: center;
 align-items: center;
 list-style: none;
 flex-wrap: wrap;
+overflow: hidden;
+
 
 
 `
@@ -14,7 +16,6 @@ export const CardItem = styled.li`
 display: flex;
 flex-direction: column;
 align-items: center;
-
 box-shadow: 0 4px 4px -2px ${({ theme }) => theme.colors.primaryColor} ;
 height: 300px;
 width: 150px;
@@ -140,6 +141,8 @@ export const More = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  
   cursor: pointer;
   width: 40%;
   height:35px;
@@ -148,7 +151,7 @@ export const More = styled.div`
   outline: none;
   background-color: ${({ theme }) => theme.colors.primaryBg};
   color: ${({ theme }) => theme.colors.primaryTextColor};
-  margin: 40px 0;
+  margin:10px auto;
 
 
 
@@ -161,6 +164,15 @@ export const More = styled.div`
   width: 100vw;
   height: 40px;
 }
+`
+
+export const SearchContent = styled.div`
+width: 100vw;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 50px;
+
 `
 
 

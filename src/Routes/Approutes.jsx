@@ -1,43 +1,32 @@
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { Header } from "../Components/Header/Header";
 import { Footer } from "../Components/Footer/Footer";
-import { Home } from "../Pages/Home/Home";
+
 import { Cart } from "../Pages/Cart/Cart";
 import { Comics } from "../Pages/Comics/Comics";
 import api from "../Services/api";
 import { useState, useEffect } from "react";
+import { Characters } from "../Pages/Characters/Characters";
 
 
 export const AppRoutes = ({handleChangeTheme, theme}) => {
   const [characters, setCharacters ] = useState([]);
-  
-  const [ car, setCar ] = useState(false);
-  
-
   const [comics, setComics ] = useState([]);
   const [cartComics, setCartComics ] = useState([]);
-
-
 
 function handleComicsAddItemToCart(thumbnail, title, prices) {
   const itemObject = {thumbnail, title, prices};
   console.log(itemObject);
   setCartComics([...cartComics, itemObject]);
   
-  
- 
 }
-
-
 
 function handleRemoveComicsFromCart(index) {
   const filteredCartComics = cartComics.filter(
     (cartItem) => cartComics.indexOf(cartItem) !== index);
   setCartComics(filteredCartComics);
   
-  
 }
-
 
   useEffect(() => {
     api
@@ -62,36 +51,32 @@ function handleRemoveComicsFromCart(index) {
    <BrowserRouter>
       <Header handleChangeTheme={handleChangeTheme} theme={theme} />
           <Routes>
-            <Route element={
-              <Home 
-                  characters={characters} 
-                  setCharacters={setCharacters} 
-                  
+
+          <Route element={
+              <Comics 
+                  comics={comics} 
+                  setComics={setComics} 
+                  handleComicsAddItemToCart={handleComicsAddItemToCart} 
                   cartComics={cartComics}
               />
               } path="/" exact
             />
 
             <Route element={
-              <Comics 
-                  comics={comics} 
-                  setComics={setComics} 
-                  handleComicsAddItemToCart={handleComicsAddItemToCart} 
+              <Characters 
+                  characters={characters} 
+                  setCharacters={setCharacters} 
                   
                   cartComics={cartComics}
               />
-              } path="/comics" 
+              } path="/characters" 
             />
 
             <Route  element={
               <Cart 
-                  
-                  
                   cartComics={cartComics} 
                   handleRemoveComicsFromCart={handleRemoveComicsFromCart} 
-                  
                   setCartComics={setCartComics} 
-                  setCar={setCar} 
               />
              } path="/carrinho" 
             />

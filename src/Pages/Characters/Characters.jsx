@@ -1,5 +1,5 @@
 import { useState} from "react";
-import { Container, More} from "./styles";
+import { Container, More, SearchContent} from "./styles";
 import api from "../../Services/api";
 
 import { Search } from "../../Components/Search/Search";
@@ -39,10 +39,15 @@ export const Characters = ({characters, setCharacters, cartComics}) => {
   }, [characters]);
 
   return(
+
 <>   
-      <Search setCharacters={setCharacters}/>
+      
 
       <Container>
+
+      <SearchContent>
+        <Search setCharacters={setCharacters}/>
+      </SearchContent>
             
       {characters.map((character) => {
           return( 
@@ -56,16 +61,13 @@ export const Characters = ({characters, setCharacters, cartComics}) => {
               />
               
             )
+            
           }
         )
       }
 
       </Container>
-                <More 
-                  
-                  onClick={handleMore}>
-                  Mais Personagens
-                </More>
+                <More onClick={handleMore}> Mais Personagens </More>
 
       {cartComics.length > 0 ? <CartButton  cartComics={cartComics} /> : null }
 </>

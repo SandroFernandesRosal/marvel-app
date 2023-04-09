@@ -20,7 +20,7 @@ export const Container = styled.input`
 `
 
 export const SearchComic = styled.input`
-
+ 
 
   width: 40%;
   height:35px;
@@ -33,6 +33,7 @@ export const SearchComic = styled.input`
   margin-top:100px;
   display: flex;
   justify-content:center;
+  
   
 `
 

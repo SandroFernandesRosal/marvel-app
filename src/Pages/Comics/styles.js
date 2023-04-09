@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.ul`
 display: flex;
-margin: 70px 0px;
+margin: 40px 0px;
 justify-content: center;
 align-items: center;
 list-style: none;
@@ -175,6 +175,7 @@ width: 100vw;
 display: flex;
 justify-content: center;
 align-items: center;
+margin-top: 20px;
 
 `
 
