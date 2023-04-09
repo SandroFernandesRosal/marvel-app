@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const ButtonCar = styled.button`
 width: 100vw;
-height: 40px;
+height: 60px;
 bottom: 0;
 border: none;
 outline: none;

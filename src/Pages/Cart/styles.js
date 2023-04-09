@@ -75,7 +75,7 @@ background-color: rgba(100, 100, 100, 0.1);
 
 export const ButtonPrice = styled.div`
 width: 100vw;
-height: 40px;
+height: 60px;
 bottom: 0;
 border: none;
 outline: none;
