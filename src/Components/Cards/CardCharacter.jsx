@@ -16,9 +16,8 @@ export const CardCharacter = ({character}) => {
 
   return(
     <>
-    <CardItem>  
+    <CardItem onClick={() => handleDescription()}>  
                     <img 
-                      onClick={() => handleDescription()}
                       src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
                       alt={`Foto do ${character.name}`} />
 
@@ -33,18 +32,15 @@ export const CardCharacter = ({character}) => {
 
 {cardDescription &&
   <ContainerDescription >
-    <CardDescriptions >
+    <CardDescriptions>
                       <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
                       
                       <div className="descriptions">
-                          <button 
-                              type="button" 
-                              onClick={() => handleDescription()}>
+                          <button type="button" onClick={() => handleDescription()} >
                               <AiOutlineClose />
                           </button>
                           <h2>{character.name}</h2>
                           <span>{character.description}</span>
-
                       </div>
     </CardDescriptions>
     </ContainerDescription>

@@ -24,7 +24,7 @@ text-align: center;
 border-radius:0% 0% 10% 0%;
 background-color: ${({ theme }) => theme.colors.primaryBg};
 margin: 10px;
-
+cursor: pointer;
 
 :hover {
   transition: 0.8s;
@@ -37,14 +37,11 @@ img {
  width: 100%;
  border-bottom: 3px solid red;
  flex: 1.5;
- cursor: pointer;
- 
 }
 
 img:hover {
   transition:  0.5s;
   transform: scale(1.1)
-  
 }
 
 .container-name {
@@ -106,18 +103,15 @@ export const CardDescriptions = styled.div`
 width: 70vw;
 height: 70vh;
 background-color: ${({ theme }) => theme.colors.primaryBg};
-border-radius: 5%;
 display: flex;
 flex-direction: column;
 box-shadow: 0 4px 4px -2px ${({ theme }) => theme.colors.primaryColor} ;
-
+border-radius:0% 0% 10% 0%;
 
 
 img {
  max-width: 100%;
  flex: 1;
- border-radius: 5% 5% 0% 0%;
- 
 }
 
 .descriptions {
@@ -156,7 +150,7 @@ color: white;
 }
 
 @media (min-width: 700px) {
-width: 50vw;
+width: 30vw;
 }
 
 `

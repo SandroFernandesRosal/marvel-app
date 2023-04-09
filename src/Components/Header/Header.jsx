@@ -1,11 +1,11 @@
 import { Container } from "./styles";
 import { MenuMobile } from "./MenuMobile";
 import { useState } from "react";
-
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 import {GiHamburgerMenu} from "react-icons/gi";
 import Logo from '../../IMG/Marvel-Comics-logo.png';
 import {AiOutlineClose} from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 export const Header = ({handleChangeTheme, theme}) => {
 
@@ -25,7 +25,7 @@ const changeIcon = () => {
     <>
     <Container>
        
-       <img src={Logo} alt="Logo" className="logo"/>
+       <Link to="/"><img src={Logo} alt="Logo" className="logo"/></Link>
        
        <button className="button-theme" onClick={() => {handleChangeTheme(); changeIcon()} }> 
        
