@@ -1,25 +1,13 @@
-import { useState} from "react";
-import { Container, ContainerDescription, CardDescriptions, CardItens, More, SearchContent  } from "./styles";
+import { Container, More, SearchContent  } from "./styles";
 import api from "../../Services/api";
-import { BsFillCartCheckFill, BsPlus, BsDash } from "react-icons/bs";
 import { SearchComics} from "../../Components/Search/SearchComics";
 import { useCallback } from "react";
-
-import {AiOutlineClose} from "react-icons/ai";
+import { CardComics } from "../../Components/Cards/CardComics";
 import { CartButton } from "../../Components/CartButton/CartButton";
 
 
-
-
-
 export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cartComics }) => {
- const [ comicsDescription, setComicsDescription ] = useState(false);
-  
-  
-  
-  const handleDescriptionComics = () => {
-    comicsDescription === false ? setComicsDescription(true) : setComicsDescription(false);
-  }
+
 
   
 
@@ -50,53 +38,16 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
 
     <Container>
     
-    {comics.map(comic => {
-        return( 
-<>
-            <CardItens key={comic.id}  >
-                    <img 
-                      onClick={handleDescriptionComics}
-                      src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-                      alt={`Foto do ${comic.name}`} />
-                    
-                    
-                    <div className="container-title">
-                    <span>{comic.title}</span>
-                    
-                    
-                    <button 
-                            className="car"
-                            type="button" onClick={() => {handleComicsAddItemToCart(comic.thumbnail, comic.title, comic.prices )}}>
-                              <span>R$ {comic.prices[0].price}</span>
-                             <BsFillCartCheckFill  /> 
-                    </button>
-                    </div>
-            </CardItens>
+    {comics.map(comic => 
 
-    {comicsDescription && 
-            <ContainerDescription >
-              
-                  <CardDescriptions  >
-                      <img src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} />
-                      
-                      <div className="descriptions">
-                          <button 
-                              type="button" 
-                              onClick={handleDescriptionComics}>
-                              <AiOutlineClose />
-                          </button>
-                          <h2>{comic.title}</h2>
-                          <span>{comic.description}</span>
+            <CardComics
+              key={comic.id}
+              comic={comic}
+              handleComicsAddItemToCart={handleComicsAddItemToCart} 
+              />
 
-                      </div>
-                  </CardDescriptions>
-              
-              </ContainerDescription>
-              }
-              
-</>
               )
-         })}
+         }
 
 
     </Container>

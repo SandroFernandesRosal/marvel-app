@@ -91,7 +91,7 @@ justify-content: center;
 align-items: center;
 top: 0px;
 position: fixed;
-backdrop-filter: blur(1px);
+backdrop-filter: blur(8px);
 background-color: rgba(100, 100, 100, 0.1);
 
 img {
@@ -104,21 +104,19 @@ img {
 
 export const CardDescriptions = styled.div`
 width: 70vw;
-
-height: 50vh;
+height: 70vh;
 background-color: ${({ theme }) => theme.colors.primaryBg};
-
 border-radius: 5%;
 display: flex;
-
+flex-direction: column;
+box-shadow: 0 4px 4px -2px ${({ theme }) => theme.colors.primaryColor} ;
 
 
 
 img {
- max-width: 50%;
- height:100%;
- 
- border-radius: 5% 0% 0% 5%;
+ max-width: 100%;
+ flex: 1;
+ border-radius: 5% 5% 0% 0%;
  
 }
 
@@ -129,7 +127,32 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  
+  flex: 1;
+}
+
+.descriptions button {
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 5px;
+
+}
+
+.descriptions button svg {
+  font-size: 20px;
+  color: red;
+}
+
+.descriptions button:hover {
+background-color: red;
+color: white;
+}
+
+.descriptions button svg:hover {
+  color: white;
 }
 
 @media (min-width: 700px) {

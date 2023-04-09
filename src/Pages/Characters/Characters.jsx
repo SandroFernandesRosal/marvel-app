@@ -1,25 +1,11 @@
-import { useState} from "react";
 import { Container, More, SearchContent} from "./styles";
 import api from "../../Services/api";
-
 import { Search } from "../../Components/Search/Search";
 import { useCallback } from "react";
-
 import { CardCharacter } from "../../Components/Cards/CardCharacter";
 import { CartButton } from "../../Components/CartButton/CartButton";
 
-
-
-
 export const Characters = ({characters, setCharacters, cartComics}) => {
-
-  const [ cardDescription, setCardDescription ] = useState(false);
- 
-
-  const handleDescription = () => {
-    cardDescription === false ? setCardDescription(true) : setCardDescription(false);
-  }
-
 
 
   const handleMore = useCallback( async () => {
@@ -42,34 +28,26 @@ export const Characters = ({characters, setCharacters, cartComics}) => {
 
 <>   
       
-
-      <Container>
+  <Container>
 
       <SearchContent>
         <Search setCharacters={setCharacters}/>
       </SearchContent>
             
-      {characters.map((character) => {
-          return( 
+      {characters.map((character) => 
                   
               <CardCharacter 
                 key={character.id}
                 character={character}
-                handleDescription={handleDescription}  
-                cardDescription={cardDescription}
-                
-              />
-              
+               />  
             )
-            
           }
-        )
-      }
+     
 
       </Container>
-                <More onClick={handleMore}> Mais Personagens </More>
+          <More onClick={handleMore}> Mais Personagens </More>
 
-      {cartComics.length > 0 ? <CartButton  cartComics={cartComics} /> : null }
+          {cartComics.length > 0 ? <CartButton  cartComics={cartComics} /> : null }
 </>
   )
 }
