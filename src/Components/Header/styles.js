@@ -98,10 +98,21 @@ li {
   margin: 5px;
   font-size: 35px;
   font-weight: bold;
+ color: white;
+ text-shadow: 1px 1px 1px red;
+ width: 100vw;
+ 
+}
+
+li:hover {
+  transition:  0.5s;
+  transform: scale(1.2);
+  text-shadow: 1px 1px 1px white;
 }
 
 a {
   color: white;
+  
   text-decoration: none;
 }
 

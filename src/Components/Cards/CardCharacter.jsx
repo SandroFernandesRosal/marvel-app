@@ -3,7 +3,7 @@ import { CardItem } from "../../Pages/Characters/styles";
 import {ContainerDescription, CardDescriptions } from "../../Pages/Characters/styles";
 import {AiOutlineClose} from "react-icons/ai";
 
-export const CardCharacter = ({character, handleDescription, cardDescription, handleAddItemToCart, handleRemoveItemFromCart}) => {
+export const CardCharacter = ({character, handleDescription, cardDescription}) => {
 
   
 
@@ -18,12 +18,6 @@ export const CardCharacter = ({character, handleDescription, cardDescription, ha
                     <div className="container-name">  
                     <span>{character.name}</span>
                     
-                      
-                    <button className="car" type="button" onClick={() => handleAddItemToCart(character.name, character.thumbnail)}>
-                      
-                      <BsFillCartCheckFill  />
-                     
-                    </button>
                     </div>
     </CardItem>
 

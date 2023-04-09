@@ -62,9 +62,12 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
                     
                     <div className="container-title">
                     <span>{comic.title}</span>
+                    
+                    
                     <button 
                             className="car"
-                            type="button" onClick={() => {handleComicsAddItemToCart(comic.title, comic.thumbnail)}}>
+                            type="button" onClick={() => {handleComicsAddItemToCart(comic.thumbnail, comic.title, comic.prices )}}>
+                              <span>R$ {comic.prices[0].price}</span>
                              <BsFillCartCheckFill  /> 
                     </button>
                     </div>
@@ -99,7 +102,7 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
     </Container>
     <More onClick={handleMoreComics}> Mais Personagens</More>
   
-  {cart.length > 0 || cartComics.length > 0 ? <CartButton cart={cart} cartComics={cartComics} /> : null }
+  {cartComics.length > 0 ? <CartButton cart={cart} cartComics={cartComics} /> : null }
     
 </>
   )

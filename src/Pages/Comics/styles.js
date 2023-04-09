@@ -40,18 +40,21 @@ img {
 .container-title {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 15px;
   width: 100%;
   flex: 1;
   align-items: center;
-  padding-top: 20px;
+  
   
 }
 
 .car {
   width: 100px;
-  
+  height: 30px;
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
   border: none;
   outline: none;
   border-radius: 5px;

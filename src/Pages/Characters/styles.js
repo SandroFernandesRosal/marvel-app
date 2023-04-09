@@ -136,6 +136,32 @@ width: 50vw;
 }
 
 `
+export const More = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 40%;
+  height:35px;
+  border-radius: 20px;
+  border: 1px solid red;
+  outline: none;
+  background-color: ${({ theme }) => theme.colors.primaryBg};
+  color: ${({ theme }) => theme.colors.primaryTextColor};
+  margin: 40px 0;
+
+
+
+:hover {
+  background-color: red;
+  
+}
+
+.linkTo {
+  width: 100vw;
+  height: 40px;
+}
+`
 
 
 

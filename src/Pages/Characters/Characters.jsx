@@ -1,5 +1,5 @@
 import { useState} from "react";
-import { Container} from "./styles";
+import { Container, More} from "./styles";
 import api from "../../Services/api";
 
 import { Search } from "../../Components/Search/Search";
@@ -11,7 +11,7 @@ import { CartButton } from "../../Components/CartButton/CartButton";
 
 
 
-export const Characters = ({characters, setCharacters, handleAddItemToCart, handleRemoveItemFromCart, cart, cartComics}) => {
+export const Characters = ({characters, setCharacters, cartComics}) => {
 
   const [ cardDescription, setCardDescription ] = useState(false);
  
@@ -52,8 +52,7 @@ export const Characters = ({characters, setCharacters, handleAddItemToCart, hand
                 character={character}
                 handleDescription={handleDescription}  
                 cardDescription={cardDescription}
-                handleAddItemToCart={handleAddItemToCart}
-                handleRemoveItemFromCart={handleRemoveItemFromCart}
+                
               />
               
             )
@@ -62,13 +61,13 @@ export const Characters = ({characters, setCharacters, handleAddItemToCart, hand
       }
 
       </Container>
-                <button 
-                  className="more" 
+                <More 
+                  
                   onClick={handleMore}>
                   Mais Personagens
-                </button>
+                </More>
 
-      {cart.length > 0 || cartComics.length > 0 ? <CartButton cart={cart} cartComics={cartComics} /> : null }
+      {cartComics.length > 0 ? <CartButton  cartComics={cartComics} /> : null }
 </>
   )
 }

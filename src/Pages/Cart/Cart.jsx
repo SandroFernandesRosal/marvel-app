@@ -1,68 +1,50 @@
 import { Container} from "./styles";
 import { CardItem } from "../Characters/styles";
 import { CardItens } from "../Comics/styles";
-import { ContainerCharacters, ContainerComics, Buy } from "./styles";
+import { ContainerCharacters, ContainerComics, Buy, ButtonPrice } from "./styles";
 import { BsCartXFill } from 'react-icons/bs'
 import { useState, useEffect } from "react";
 
 
-export const Cart = ({cart, handleRemoveItemFromCart, cartComics, handleRemoveComicsFromCart, setCart, setCartComics, setCar, setAcountCar}) => {
+export const Cart = ({cartComics, handleRemoveComicsFromCart, setCartComics}) => {
  const [buy, setBuy ] = useState(false);
 
+ const totalPrice = cartComics.reduce((acc, current) => acc + current.prices[0].price, 0);
+ console.log(totalPrice);
+ 
+
  const handleBuy = () => {
-  setBuy(true)
-  setCart([]);
-  setCartComics([]);
-  setAcountCar(0);
-  setCar(false);
+  
+  
+  if(cartComics.length === 0) {
+    alert('Adicione um ítem ao carrinho');
+    setBuy(false);
+  } 
+  if (cartComics.length > 0) {
+    setCartComics([]);
+    setBuy(true);
+  }
+  
+  if (totalPrice === 0) {
+    setBuy(false);
+    alert('ítem indisponível');
+    setCartComics([]);
+  }
+ 
 
  }
 
  useEffect(() => {
   const interval = setInterval(() => {
     setBuy(false);
-  }, 3000);
+  }, 5000);
   
   return () => clearInterval(interval);
 }, []);
 
   return(
     <Container>
-
-    {cart.length > 0 &&
-      <h3>
-        <span>{cart.length} </span>
-        <span>{cart.length > 1 ? "Personagens" : "Personagem"} </span>
-        <span>{cart.length > 1 ? "adicionados" : "adicionado"} ao carrinho</span>
-      </h3>
-    }
-     
-
-     <ContainerCharacters>
-     
-    {cart < 1 ? <p>Nenhum personagem adicionado ao carrinho</p> :
-      <>
-      {cart.map( (item, index) => {
-        return(
-          <CardItem key={index}>
-                <img 
-                    src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                    alt={`Foto do ${item.name}`} />
-
-                <div className="container-name">
-                    <span>{item.name}</span>
-                    <button onClick={() => handleRemoveItemFromCart(index)}>
-                      <BsCartXFill />
-                    </button>
-                </div>
-          </CardItem>
-        )
-      })}
-      </>
-      }
-</ContainerCharacters>
-
-
+ 
 {cartComics.length > 0 && 
   <h3>
       <span>{cartComics.length} </span>
@@ -86,9 +68,10 @@ export const Cart = ({cart, handleRemoveItemFromCart, cartComics, handleRemoveCo
 
                     <div className="container-title">
                         <span>{comic.title}</span>
+                        <span>R$ {comic.prices[0].price}</span>
                         <div className="buttons">
                             <button onClick={() => handleRemoveComicsFromCart(index)}><BsCartXFill /></button>
-                            <button onClick={() => handleBuy()}>Comprar</button>
+                            
                         </div>
                     </div>
             </CardItens>
@@ -98,8 +81,17 @@ export const Cart = ({cart, handleRemoveItemFromCart, cartComics, handleRemoveCo
     }
      
      </ContainerComics> 
-
-     {buy && <Buy ><h2>Compra finalizada com sucesso </h2> </Buy>}
+  
+    
+    {buy && <Buy ><h2>Compra finalizada com sucesso </h2> </Buy> }
+    
+     
+     
+     <ButtonPrice> 
+     <h2>Total: R$ {totalPrice.toFixed(2)}</h2>
+     <button onClick={() => handleBuy()}>Comprar</button>
+     </ButtonPrice>
+     
      
     </Container>
   )

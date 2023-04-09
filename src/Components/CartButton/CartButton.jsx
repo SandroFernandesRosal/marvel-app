@@ -2,7 +2,7 @@ import { ButtonCar } from "./styles";
 import { BsFillCartCheckFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-export const CartButton = ({cart, cartComics}) => {
+export const CartButton = ({ cartComics }) => {
   return(
     <Link className="linkTo" to="/carrinho">
       <ButtonCar>    
@@ -17,18 +17,6 @@ export const CartButton = ({cart, cartComics}) => {
 
          </> : null
     }
-
-
-    
-{cart.length > 0 ?
-            <>
-              <p className="cartnumber">{cart.length}</p>
-              <p>{cart.length > 1 ? "Personagens" : "Personagem"} </p>
-
-              
-              
-            </> : null
-            }
 
 
           
