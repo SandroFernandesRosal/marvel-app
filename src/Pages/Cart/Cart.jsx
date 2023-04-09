@@ -4,15 +4,14 @@ import { CardItens } from "../Comics/styles";
 import { ContainerCharacters, ContainerComics, Buy, ButtonPrice } from "./styles";
 import { BsCartXFill } from 'react-icons/bs'
 import { useState, useEffect } from "react";
+import { CartButton } from "../../Components/CartButton/CartButton";
 
 
 export const Cart = ({cartComics, handleRemoveComicsFromCart, setCartComics}) => {
  const [buy, setBuy ] = useState(false);
 
  const totalPrice = cartComics.reduce((acc, current) => acc + current.prices[0].price, 0);
- console.log(totalPrice);
  
-
  const handleBuy = () => {
   
   
@@ -20,16 +19,20 @@ export const Cart = ({cartComics, handleRemoveComicsFromCart, setCartComics}) =>
     alert('Adicione um ítem ao carrinho');
     setBuy(false);
   } 
+
+ 
   if (cartComics.length > 0) {
     setCartComics([]);
     setBuy(true);
   }
   
-  if (totalPrice === 0) {
+  if (totalPrice === 0 ) {
     setBuy(false);
     alert('ítem indisponível');
     setCartComics([]);
   }
+
+  
  
 
  }

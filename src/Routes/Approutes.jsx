@@ -16,7 +16,6 @@ export const AppRoutes = ({handleChangeTheme, theme}) => {
 
 function handleComicsAddItemToCart(thumbnail, title, prices) {
   const itemObject = {thumbnail, title, prices};
-  console.log(itemObject);
   setCartComics([...cartComics, itemObject]);
   
 }
