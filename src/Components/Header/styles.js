@@ -96,7 +96,7 @@ background-color: rgba(100, 100, 100, 0.1);
 
 li {
   margin: 5px;
-  font-size: 35px;
+  font-size: 40px;
   font-weight: bold;
  color: white;
  text-shadow: 1px 1px 1px red;

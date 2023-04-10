@@ -112,7 +112,6 @@ export const CardDescriptions = styled.div`
 width: 80vw;
 height: 70vh;
 background-color: ${({ theme }) => theme.colors.primaryBg};
-border-radius: 5%;
 display: flex;
 
 box-shadow: 0 4px 4px -2px ${({ theme }) => theme.colors.primaryColor} ;

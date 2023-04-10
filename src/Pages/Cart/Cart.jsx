@@ -35,7 +35,7 @@ export const Cart = ({cartComics, handleRemoveComicsFromCart, setCartComics}) =>
  useEffect(() => {
   const interval = setInterval(() => {
     setBuy(false);
-  }, 5000);
+  }, 3000);
   
   return () => clearInterval(interval);
 }, []);

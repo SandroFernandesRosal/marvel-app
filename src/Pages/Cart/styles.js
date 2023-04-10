@@ -58,7 +58,8 @@ button svg:hover {
 
 export const Buy = styled.div`
 width: 100vw;
-height: 50vh;
+height: 100vh;
+top: 0;
 position: absolute;
 z-index: 999;
 display: flex;
