@@ -8,7 +8,6 @@ import {AiOutlineClose} from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 export const Header = ({handleChangeTheme, theme}) => {
-
   const [ menu, setMenu ] = useState(false);
   const [ icon, setIcon ] = useState(false);
   
@@ -25,16 +24,22 @@ const changeIcon = () => {
     <>
     <Container>
        
-       <Link to="/"><img src={Logo} alt="Logo" className="logo"/></Link>
+       <Link to="/">
+         <img src={Logo} alt="Logo" className="logo"/>
+       </Link>
        
-       <button className="button-theme" onClick={() => {handleChangeTheme(); changeIcon()} }> 
+       <button 
+         type="button"
+         className="button-theme" 
+         onClick={() => {handleChangeTheme(); changeIcon()} }> 
+         {icon === false ? <BsFillSunFill className="sun" /> : <BsFillMoonFill className="moon"/> }
+       </button>
        
-       {icon === false ? <BsFillSunFill className="sun" /> : <BsFillMoonFill className="moon"/> }
-       
-        </button>
-       
-       <button tapy="button" onClick={handleMenu} className="menu">
-       {menu ===false ?<GiHamburgerMenu /> : <AiOutlineClose />}
+       <button 
+         tapy="button" 
+         onClick={handleMenu} 
+         className="menu">
+         {menu ===false ?<GiHamburgerMenu /> : <AiOutlineClose />}
        </button>
 
     </Container>

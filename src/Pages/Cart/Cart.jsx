@@ -14,13 +14,11 @@ export const Cart = ({cartComics, handleRemoveComicsFromCart, setCartComics}) =>
  
  const handleBuy = () => {
   
-  
   if(cartComics.length === 0) {
     alert('Adicione um ítem ao carrinho');
     setBuy(false);
   } 
 
- 
   if (cartComics.length > 0) {
     setCartComics([]);
     setBuy(true);
@@ -31,9 +29,6 @@ export const Cart = ({cartComics, handleRemoveComicsFromCart, setCartComics}) =>
     alert('ítem indisponível');
     setCartComics([]);
   }
-
-  
- 
 
  }
 
@@ -48,54 +43,56 @@ export const Cart = ({cartComics, handleRemoveComicsFromCart, setCartComics}) =>
   return(
     <Container>
  
-{cartComics.length > 0 && 
-  <h3>
-      <span>{cartComics.length} </span>
-      <span>{cartComics.length > 1 ? "Quadrinhos" : "Quadrinho"} </span>
-      <span>{cartComics.length > 1 ? "adicionados" : "adicionado"} ao carrinho</span>
-  </h3>
-}
+        {cartComics.length > 0 && 
+          <h3>
+              <span>{cartComics.length} </span>
+              <span>{cartComics.length > 1 ? "Quadrinhos" : "Quadrinho"} </span>
+              <span>{cartComics.length > 1 ? "adicionados" : "adicionado"} ao carrinho</span>
+          </h3>
+        }
 
-<ContainerComics>
+ <ContainerComics>
 
-      {cartComics < 1 ? 
-        <p>Nenhum Quadrinho adicionado ao carrinho</p> :
+  {cartComics < 1 ? 
+      <p>Nenhum Quadrinho adicionado ao carrinho</p> :
    <>
       {cartComics.map((comic, index) => {
         return(
            <CardItens key={index}>
+               <img  
+                  src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                  alt={`Foto do ${comic.title}`} 
+                />
 
-              <img  
-                    src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-                    alt={`Foto do ${comic.title}`} />
+                <div className="container-title">
 
-                    <div className="container-title">
-                        <span>{comic.title}</span>
-                        <span>R$ {comic.prices[0].price}</span>
-                        <div className="buttons">
-                            <button onClick={() => handleRemoveComicsFromCart(index)}><BsCartXFill /></button>
-                            
-                        </div>
+                    <span>{comic.title}</span>
+                    <span>R$ {comic.prices[0].price}</span>
+
+                    <div className="buttons">
+                        <button onClick={() => handleRemoveComicsFromCart(index)}>
+                          <BsCartXFill />
+                        </button> 
                     </div>
+
+                </div>
             </CardItens>
            )
         })}
-    </>
+  </>
     }
      
-     </ContainerComics> 
+ </ContainerComics> 
   
     
     {buy && <Buy ><h2>Compra finalizada com sucesso </h2> </Buy> }
     
-     
-     
      <ButtonPrice> 
      <h2>Total: R$ {totalPrice.toFixed(2)}</h2>
      <button onClick={() => handleBuy()}>Comprar</button>
      </ButtonPrice>
      
      
-    </Container>
+</Container>
   )
 }

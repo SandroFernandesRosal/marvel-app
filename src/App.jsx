@@ -10,11 +10,8 @@ import { light } from "./Themes/light";
 function App() {
   const [ theme, setTheme ] = usePersistedState('theme', dark);
   
-
   const handleChangeTheme = () => {
-    
-    setTheme(theme.title === 'dark' ? light : dark);
-    
+    setTheme(theme.title === 'dark' ? light : dark);   
   }
 
   return (

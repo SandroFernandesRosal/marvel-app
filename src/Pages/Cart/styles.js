@@ -8,9 +8,6 @@ justify-content: center;
 align-items: center;
 flex-wrap: wrap;
 
-
-
-
 `
 
 export const ContainerCharacters = styled.ul`
@@ -69,8 +66,6 @@ justify-content: center;
 align-items: center;
 backdrop-filter: blur(8px);
 background-color: rgba(100, 100, 100, 0.1);
-
-
 
 `
 

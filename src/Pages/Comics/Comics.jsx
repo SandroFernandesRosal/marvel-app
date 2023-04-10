@@ -8,9 +8,6 @@ import { CartButton } from "../../Components/CartButton/CartButton";
 
 export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cartComics }) => {
 
-
-  
-
   const handleMoreComics = useCallback( async () => {
     try {
       const offset = comics.length;
@@ -27,33 +24,28 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
     }
   }, [comics]);
 
-
-
   return(
     <>
     <SearchContent>
-    <SearchComics setComics={setComics}/>
+       <SearchComics setComics={setComics}/>
     </SearchContent>
-    
-
+  
     <Container>
     
-    {comics.map(comic => 
+      {comics.map(comic => 
 
-            <CardComics
-              key={comic.id}
-              comic={comic}
-              handleComicsAddItemToCart={handleComicsAddItemToCart} 
-              />
+         <CardComics
+            key={comic.id}
+            comic={comic}
+            handleComicsAddItemToCart={handleComicsAddItemToCart} 
+         />
 
-              )
-         }
-
-
+       )
+      }
     </Container>
+
     <More onClick={handleMoreComics}> Mais Personagens</More>
-  
-  {cartComics.length > 0 ? <CartButton cart={cart} cartComics={cartComics} /> : null }
+    {cartComics.length > 0 ? <CartButton cart={cart} cartComics={cartComics} /> : null }
     
 </>
   )

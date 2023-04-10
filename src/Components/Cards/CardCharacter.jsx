@@ -8,24 +8,21 @@ export const CardCharacter = ({character}) => {
 
   const [ cardDescription, setCardDescription ] = useState(false);
  
-
   const handleDescription = () => {
-    
     cardDescription === false ? setCardDescription(true) : setCardDescription(false);
   }
 
   return(
-    <>
+  <>
     <CardItem onClick={() => handleDescription()}>  
-                    <img 
-                      src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-                      alt={`Foto do ${character.name}`} />
+        <img 
+           src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+           alt={`Foto do ${character.name}`} 
+        />
 
-                    <div className="container-name">  
-                    <span>{character.name}</span>
-                    
-                    
-                    </div>
+        <div className="container-name">  
+           <span>{character.name}</span>
+        </div>
     </CardItem>
 
 
@@ -33,15 +30,18 @@ export const CardCharacter = ({character}) => {
 {cardDescription &&
   <ContainerDescription >
     <CardDescriptions>
-                      <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
+        <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
                       
-                      <div className="descriptions">
-                          <button type="button" onClick={() => handleDescription()} >
-                              <AiOutlineClose />
-                          </button>
-                          <h2>{character.name}</h2>
-                          <span>{character.description}</span>
-                      </div>
+        <div className="descriptions">
+          
+            <button type="button" onClick={() => handleDescription()} >
+                <AiOutlineClose />
+            </button>
+
+            <h2>{character.name}</h2>
+            <span>{character.description}</span>
+
+        </div>
     </CardDescriptions>
     </ContainerDescription>
 }

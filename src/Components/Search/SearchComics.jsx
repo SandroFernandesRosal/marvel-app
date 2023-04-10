@@ -12,14 +12,12 @@ export const SearchComics = ({setComics}) => {
       .get(`/comics?titleStartsWith=${searchComics}`)
       .then(response =>  {
          setComics(response.data.data.results);
-        console.log(response.data.data.results)
         })
       .catch(err => console.log(err));
     }, [searchComics])
 
   return(
     
-      
       <SearchComic className="searchcomics"
           name="search"
           type="text"

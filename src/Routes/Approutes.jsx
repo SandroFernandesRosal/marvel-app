@@ -17,14 +17,12 @@ export const AppRoutes = ({handleChangeTheme, theme}) => {
 function handleComicsAddItemToCart(thumbnail, title, prices) {
   const itemObject = {thumbnail, title, prices};
   setCartComics([...cartComics, itemObject]);
-  
 }
 
 function handleRemoveComicsFromCart(index) {
   const filteredCartComics = cartComics.filter(
     (cartItem) => cartComics.indexOf(cartItem) !== index);
   setCartComics(filteredCartComics);
-  
 }
 
   useEffect(() => {
@@ -61,11 +59,10 @@ function handleRemoveComicsFromCart(index) {
               } path="/" exact
             />
 
-            <Route element={
+          <Route element={
               <Characters 
                   characters={characters} 
                   setCharacters={setCharacters} 
-                  
                   cartComics={cartComics}
               />
               } path="/characters" 

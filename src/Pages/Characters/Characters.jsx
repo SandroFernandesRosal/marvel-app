@@ -7,7 +7,6 @@ import { CartButton } from "../../Components/CartButton/CartButton";
 
 export const Characters = ({characters, setCharacters, cartComics}) => {
 
-
   const handleMore = useCallback( async () => {
     try {
       const offset = characters.length;
@@ -24,7 +23,7 @@ export const Characters = ({characters, setCharacters, cartComics}) => {
     }
   }, [characters]);
 
-  return(
+return(
 
 <>   
       
@@ -41,13 +40,11 @@ export const Characters = ({characters, setCharacters, cartComics}) => {
                 character={character}
                />  
             )
-          }
-     
+      }
+  </Container>
 
-      </Container>
-          <More onClick={handleMore}> Mais Personagens </More>
-
-          {cartComics.length > 0 ? <CartButton  cartComics={cartComics} /> : null }
+      <More onClick={handleMore}> Mais Personagens </More>
+      {cartComics.length > 0 ? <CartButton  cartComics={cartComics} /> : null }
 </>
   )
 }
