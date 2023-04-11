@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Background from "../../IMG/characters3.png";
 
 export const Container = styled.ul`
 display: flex;
@@ -8,7 +9,7 @@ align-items: center;
 list-style: none;
 flex-wrap: wrap;
 overflow: hidden;
-background-image: url("src/IMG/characters3.png");
+background-image: url(${Background});
 background-size: 100%;
 
 
