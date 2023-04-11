@@ -26,11 +26,11 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
 
   return(
     <>
-    <SearchContent>
-       <SearchComics setComics={setComics}/>
-    </SearchContent>
-  
     <Container>
+
+      <SearchContent>
+        <SearchComics setComics={setComics}/>
+      </SearchContent>
     
       {comics.map(comic => 
 
@@ -42,6 +42,8 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
 
        )
       }
+
+
     </Container>
 
     <More onClick={handleMoreComics}> Mais Personagens</More>

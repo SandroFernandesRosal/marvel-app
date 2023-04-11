@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const Container = styled.ul`
 display: flex;
-margin: 40px 0px;
+margin: 70px 0px 0px 0px;
 justify-content: center;
 align-items: center;
 list-style: none;
 flex-wrap: wrap;
-gap: 5px;
 overflow: hidden;
+background-image: url("src/IMG/characters3.png");
+background-size: 100%;
 
 
 `
@@ -22,6 +23,7 @@ width: 150px;
 text-align: center;
 background-color: transparent;
 margin: 10px;
+box-shadow: 0 4px 4px -2px black ;
 
 img {
   width: 100%;
@@ -29,7 +31,7 @@ img {
   
   border: 1px solid ${({ theme }) => theme.colors.primaryColor};
   cursor: pointer;
-  box-shadow: 0 4px 4px -2px ${({ theme }) => theme.colors.primaryColor} ;
+  
 }
 
 :hover {
@@ -45,6 +47,9 @@ img {
   width: 100%;
   flex: 1;
   align-items: center;
+  background-color: rgba(1,1,1,0.5);
+  color: white;
+  padding-bottom: 3px;
   
   
 }
@@ -180,6 +185,7 @@ export const More = styled.button`
   justify-content: center;
   align-items: center;
   margin:10px auto;
+  
 
 
 :hover {

@@ -7,7 +7,7 @@ import Logo from '../../IMG/Marvel-Comics-logo.png';
 import {AiOutlineClose} from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-export const Header = ({handleChangeTheme, theme}) => {
+export const Header = ({ handleChangeTheme }) => {
   const [ menu, setMenu ] = useState(false);
   const [ icon, setIcon ] = useState(false);
   

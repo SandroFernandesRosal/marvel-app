@@ -21,7 +21,7 @@ export const SearchComics = ({setComics}) => {
       <SearchComic className="searchcomics"
           name="search"
           type="text"
-          placeholder="Pesquise seu personagem"
+          placeholder="Pesquise seu quadrinho"
           value={searchComics}
           onChange={e => setSearchComics(e.target.value)}
           

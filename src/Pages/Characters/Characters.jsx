@@ -25,8 +25,7 @@ export const Characters = ({characters, setCharacters, cartComics}) => {
 
 return(
 
-<>   
-      
+<>    
   <Container>
 
       <SearchContent>

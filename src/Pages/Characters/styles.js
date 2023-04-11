@@ -8,6 +8,8 @@ align-items: center;
 list-style: none;
 flex-wrap: wrap;
 overflow: hidden;
+background-image: url("src/IMG/characters3.png");
+background-size: 100%;
 
 
 

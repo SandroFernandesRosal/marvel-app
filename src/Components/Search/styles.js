@@ -9,30 +9,40 @@ export const Container = styled.input`
   border: 1px solid red;
   outline: none;
   text-align: center;
-  background-color: ${({ theme }) => theme.colors.primaryBg};
-  color: ${({ theme }) => theme.colors.primaryTextColor};
+  background-color: rgba(1,1,1,0.4);
   margin-bottom: 40px;
+  color: white;
+  font-weight: bold;
   
-  .searchcomics {
-    margin-top: 100px;
+  
+  ::placeholder{
+    color: white;
+    font-weight: bold;
   }
+ 
 
 `
 
 export const SearchComic = styled.input`
  
 
-  width: 40%;
+ width: 40%;
   height:35px;
   border-radius: 20px;
   border: 1px solid red;
   outline: none;
   text-align: center;
-  background-color: ${({ theme }) => theme.colors.primaryBg};
-  color: ${({ theme }) => theme.colors.primaryTextColor};
-  margin-top:100px;
-  display: flex;
-  justify-content:center;
+  background-color: rgba(1,1,1,0.4);
+  margin-bottom: 40px;
+  color: white;
+  font-weight: bold;
+  margin-top: 40px;
+  
+  ::placeholder{
+    color: white;
+    font-weight: bold;
+  }
+ 
   
   
 `
