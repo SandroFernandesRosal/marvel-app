@@ -120,8 +120,6 @@ box-shadow: 0 4px 4px -2px ${({ theme }) => theme.colors.primaryColor} ;
 img {
  max-width: 50%;
  flex: 1;
- border-radius: 5% 0% 0% 5%;
- 
 }
 
 .descriptions {
