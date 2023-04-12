@@ -56,7 +56,7 @@ export const Cart = ({cartComics, handleRemoveComicsFromCart, setCartComics}) =>
  <ContainerComics>
 
   {cartComics < 1 ? 
-      <p>Nenhum Quadrinho adicionado ao carrinho</p> :
+      <h4>Nenhum quadrinho adicionado ao carrinho</h4>:
    <>
       {cartComics.map((comic, index) => {
         return(
