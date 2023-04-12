@@ -26,7 +26,7 @@ export const Characters = ({characters, setCharacters, cartComics}) => {
 return(
 
 <>    
-  <Container>
+  <Container style={{height: characters.length === 0 ? "100vh" : null}} >
 
       <SearchContent>
         <Search setCharacters={setCharacters}/>

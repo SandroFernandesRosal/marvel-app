@@ -26,7 +26,7 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
 
   return(
     <>
-    <Container>
+    <Container style={{height: comics.length === 0 ? "100vh" : null}} >
 
       <SearchContent>
         <SearchComics setComics={setComics}/>

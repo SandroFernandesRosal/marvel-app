@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Background from "../../IMG/characters3.png";
 
 export const Container = styled.ul`
 margin-top: 100px;
@@ -7,6 +8,9 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 flex-wrap: wrap;
+background-image: url(${Background});
+background-size: 100%;
+
 
 `
 
@@ -23,6 +27,7 @@ button {
   border: none;
   outline: none;
   border-radius: 5px;
+  
 }
 
 
@@ -41,11 +46,16 @@ justify-content: center;
 align-items: center;
 margin-bottom: 30px;
 overflow: hidden;
+
+
+
+
 button {
   width: 50px;
   border: none;
   outline: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 button svg {

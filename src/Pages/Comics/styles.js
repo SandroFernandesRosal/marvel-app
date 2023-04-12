@@ -29,10 +29,8 @@ box-shadow: 0 4px 4px -2px black ;
 img {
   width: 100%;
   height: 63%;
-  
   border: 1px solid ${({ theme }) => theme.colors.primaryColor};
   cursor: pointer;
-  
 }
 
 :hover {
@@ -50,9 +48,7 @@ img {
   align-items: center;
   background-color: rgba(1,1,1,0.5);
   color: white;
-  padding-bottom: 3px;
-  
-  
+  padding-bottom: 3px; 
 }
 
 .car {
@@ -65,11 +61,14 @@ img {
   outline: none;
   border-radius: 5px;
   color: red;
+  cursor: pointer;
+  
+ 
 }
 
 .car svg {
   font-size: 20px;
-  cursor: pointer;
+  
 }
 
 .car:hover {
@@ -82,12 +81,10 @@ img {
   width: 100%;
   justify-content: space-around;
   gap: 5px;
-}
-
-.buttons button {
-  flex: 1;
   
 }
+
+
 
 @media (min-width: 700px) {
 width: 200px;
