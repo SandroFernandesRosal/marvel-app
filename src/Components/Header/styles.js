@@ -77,7 +77,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 position: fixed;
-
+z-index: 2;
 width: 100vw;
 height: 100vh;
 backdrop-filter: blur(8px);

@@ -11,6 +11,7 @@ flex-wrap: wrap;
 overflow: hidden;
 background-image: url(${Background});
 background-size: 100%;
+padding-bottom: 30px;
 
 
 `
@@ -24,14 +25,19 @@ width: 150px;
 text-align: center;
 background-color: transparent;
 margin: 10px;
-box-shadow: 0 4px 4px -2px black ;
+box-shadow: 0 4px 4px -2px black;
+
+
 
 img {
   width: 100%;
   height: 63%;
   border: 1px solid ${({ theme }) => theme.colors.primaryColor};
   cursor: pointer;
+
+
 }
+
 
 :hover {
   transition:  0.5s;
@@ -49,6 +55,7 @@ img {
   background-color: rgba(1,1,1,0.5);
   color: white;
   padding-bottom: 3px; 
+
 }
 
 .car {
@@ -83,8 +90,6 @@ img {
   gap: 5px;
   
 }
-
-
 
 @media (min-width: 700px) {
 width: 200px;
@@ -170,27 +175,61 @@ export const More = styled.button`
 
 
   cursor: pointer;
-  width: 40%;
-  height:35px;
-  border-radius: 20px;
-  border: 1px solid red;
+  height: 400px;
+  width: 150px;
+  
+  
   outline: none;
   text-align: center;
-  background-color: ${({ theme }) => theme.colors.primaryBg};
+  border: none;
   color: ${({ theme }) => theme.colors.primaryTextColor};
-  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  margin: 0 10px;
+  box-shadow: 0 4px 4px -2px black;
+
+
+.icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin:10px auto;
+  width: 100%;
+  height: 63%;
+  border: 1px solid ${({ theme }) => theme.colors.primaryTextColor};
   
-
-
-:hover {
-  background-color: red;
+  background-color: rgba(100, 100, 100, 0.5);
+  
+  backdrop-filter: blur(8px);
+  background-color: rgba(100, 100, 100, 0.1);
   
 }
 
+.icon svg {
+  font-size: 80px;
+  
+}
+
+.icon svg:hover {
+  color: red;
+}
+
+.more-description {
+ 
+  display: flex;
+  color: white;
+  flex: 1;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(1,1,1,0.5);
+}
+
+@media (min-width: 700px) {
+width: 200px;
+}
 `
 
 export const SearchContent = styled.div`

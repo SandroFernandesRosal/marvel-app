@@ -13,31 +13,6 @@ background-size: 100%;
 
 `
 
-export const ContainerCharacters = styled.ul`
-display: flex;
-
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-margin-bottom: 30px;
-
-button {
-  width: 50px;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  
-}
-
-
-button svg {
-  font-size: 20px;
-}
-
-button svg:hover {
-  color: green;
-}
-`
 export const ContainerComics = styled.ul`
 display: flex;
 flex-wrap: wrap;
@@ -45,9 +20,6 @@ justify-content: center;
 align-items: center;
 margin-bottom: 30px;
 overflow: hidden;
-
-
-
 
 button {
   width: 50px;

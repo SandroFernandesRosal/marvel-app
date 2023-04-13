@@ -11,6 +11,7 @@ flex-wrap: wrap;
 overflow: hidden;
 background-image: url(${Background});
 background-size: 100%;
+padding-bottom: 30px;
 
 
 
@@ -159,26 +160,58 @@ width: 30vw;
 `
 export const More = styled.div`
   display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 4px -2px ${({ theme }) => theme.colors.primaryColor} ;
+  cursor: pointer;
+  height: 300px;
+  width: 150px;
+  border: 1px solid ${({ theme }) => theme.colors.primaryTextColor};
+  outline: none;
+  border-radius:0% 0% 10% 0%;
+  color: ${({ theme }) => theme.colors.primaryTextColor};
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+  background-color: rgba(100, 100, 100, 0.1);
+  margin: 0 10px;
+  
+
+
+.icon {
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  flex: 1.5;
   
-  cursor: pointer;
-  width: 40%;
-  height:35px;
-  border-radius: 20px;
-  border: 1px solid red;
-  outline: none;
-  background-color: ${({ theme }) => theme.colors.primaryBg};
-  color: ${({ theme }) => theme.colors.primaryTextColor};
-  margin:10px auto;
+  backdrop-filter: blur(8px);
+  background-color: rgba(100, 100, 100, 0.1);
+  
+  border-bottom: 3px solid red;
+}
 
-
-
-:hover {
-  background-color: red;
+.icon svg {
+  font-size: 80px;
+  color: white;
   
 }
+
+.icon svg:hover {
+  color: red;
+}
+
+.more-description {
+ flex: 1;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: white;
+ 
+}
+
+@media (min-width: 700px) {
+  height: 350px;
+  width: 200px;
+}
+
 
 .linkTo {
   width: 100vw;

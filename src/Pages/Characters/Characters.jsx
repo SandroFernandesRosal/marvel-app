@@ -4,6 +4,7 @@ import { Search } from "../../Components/Search/Search";
 import { useCallback } from "react";
 import { CardCharacter } from "../../Components/Cards/CardCharacter";
 import { CartButton } from "../../Components/CartButton/CartButton";
+import { BsPlusSquare } from 'react-icons/bs'
 
 export const Characters = ({characters, setCharacters, cartComics}) => {
 
@@ -40,9 +41,15 @@ return(
                />  
             )
       }
+
+      <More onClick={handleMore}> 
+        <div className="icon">
+        <BsPlusSquare /></div> 
+        <div className="more-description"><h5>Mais Personagens</h5></div>
+      </More>
   </Container>
 
-      <More onClick={handleMore}> Mais Personagens </More>
+     
       {cartComics.length > 0 ? <CartButton  cartComics={cartComics} /> : null }
 </>
   )

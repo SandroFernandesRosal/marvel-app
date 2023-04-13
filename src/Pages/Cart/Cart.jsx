@@ -1,11 +1,8 @@
 import { Container} from "./styles";
-import { CardItem } from "../Characters/styles";
 import { CardItens } from "../Comics/styles";
-import { ContainerCharacters, ContainerComics, Buy, ButtonPrice } from "./styles";
+import { ContainerComics, Buy, ButtonPrice } from "./styles";
 import { BsCartXFill } from 'react-icons/bs'
 import { useState, useEffect } from "react";
-import { CartButton } from "../../Components/CartButton/CartButton";
-
 
 export const Cart = ({cartComics, handleRemoveComicsFromCart, setCartComics}) => {
  const [buy, setBuy ] = useState(false);
@@ -90,8 +87,8 @@ export const Cart = ({cartComics, handleRemoveComicsFromCart, setCartComics}) =>
     {buy && <Buy ><h2>Compra finalizada com sucesso </h2> </Buy> }
     
      <ButtonPrice> 
-     <h2>Total: R$ {totalPrice.toFixed(2)}</h2>
-     <button onClick={() => handleBuy()}>Comprar</button>
+        <h2>Total: R$ {totalPrice.toFixed(2)}</h2>
+        <button onClick={() => handleBuy()}>Comprar</button>
      </ButtonPrice>
      
      

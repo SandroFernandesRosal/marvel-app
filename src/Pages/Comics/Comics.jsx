@@ -4,6 +4,7 @@ import { SearchComics} from "../../Components/Search/SearchComics";
 import { useCallback } from "react";
 import { CardComics } from "../../Components/Cards/CardComics";
 import { CartButton } from "../../Components/CartButton/CartButton";
+import { BsPlusSquare } from 'react-icons/bs'
 
 
 export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cartComics }) => {
@@ -43,10 +44,16 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
        )
       }
 
+   <More onClick={handleMoreComics}> 
+        <div className="icon">
+        <BsPlusSquare /></div>
+        <div className="more-description"><h4>Mais quadrinhos</h4></div>
+        
+    </More>
 
     </Container>
 
-    <More onClick={handleMoreComics}> Mais Personagens</More>
+    
     {cartComics.length > 0 ? <CartButton cart={cart} cartComics={cartComics} /> : null }
     
 </>
