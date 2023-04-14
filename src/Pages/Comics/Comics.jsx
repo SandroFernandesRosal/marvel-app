@@ -4,10 +4,11 @@ import { SearchComics} from "../../Components/Search/SearchComics";
 import { useCallback } from "react";
 import { CardComics } from "../../Components/Cards/CardComics";
 import { CartButton } from "../../Components/CartButton/CartButton";
-import { BsPlusSquare } from 'react-icons/bs'
+import { BsPlusSquare } from 'react-icons/bs';
+import Loading from "../../IMG/loading.gif";
 
 
-export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cartComics, totalPrice }) => {
+export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cartComics, totalPrice, loading }) => {
 
   const handleMoreComics = useCallback( async () => {
     try {
@@ -29,6 +30,9 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
     <>
     <Container style={{height: comics.length === 0 ? "100vh" : null}} >
 
+    {loading ? <img src={Loading}></img> :
+
+   <>
       <SearchContent>
         <SearchComics setComics={setComics}/>
       </SearchContent>
@@ -50,7 +54,8 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
         <div className="more-description"><h4>Mais quadrinhos</h4></div>
         
     </More>
-
+  </>
+}
     </Container>
 
     

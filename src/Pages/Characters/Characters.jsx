@@ -4,9 +4,10 @@ import { Search } from "../../Components/Search/Search";
 import { useCallback } from "react";
 import { CardCharacter } from "../../Components/Cards/CardCharacter";
 import { CartButton } from "../../Components/CartButton/CartButton";
-import { BsPlusSquare } from 'react-icons/bs'
+import { BsPlusSquare } from 'react-icons/bs';
+import Loading from "../../IMG/loading.gif";
 
-export const Characters = ({characters, setCharacters, cartComics, totalPrice}) => {
+export const Characters = ({characters, setCharacters, cartComics, totalPrice, loading}) => {
 
   const handleMore = useCallback( async () => {
     try {
@@ -29,6 +30,9 @@ return(
 <>    
   <Container style={{height: characters.length === 0 ? "100vh" : null}} >
 
+   {loading ? <img src={Loading}></img> :
+
+     <>
       <SearchContent>
         <Search setCharacters={setCharacters}/>
       </SearchContent>
@@ -47,6 +51,9 @@ return(
         <BsPlusSquare /></div> 
         <div className="more-description"><h5>Mais Personagens</h5></div>
       </More>
+      </>
+      }
+      
   </Container>
 
      

@@ -13,6 +13,7 @@ export const AppRoutes = ({handleChangeTheme, theme}) => {
   const [characters, setCharacters ] = useState([]);
   const [comics, setComics ] = useState([]);
   const [cartComics, setCartComics ] = useState([]);
+  const [loading, setLoading ] = useState(true);
 
 function handleComicsAddItemToCart(thumbnail, title, prices) {
   const itemObject = {thumbnail, title, prices};
@@ -32,6 +33,7 @@ const totalPrice = cartComics.reduce((acc, current) => acc + current.prices[0].p
       .get('/characters')
       .then( response => {
         setCharacters(response.data.data.results);
+        setLoading(false);
       })
       .catch(err => console.log(err));
   }, []);
@@ -41,7 +43,7 @@ const totalPrice = cartComics.reduce((acc, current) => acc + current.prices[0].p
       .get('/comics')
       .then( response => {
         setComics(response.data.data.results);
-        
+        setLoading(false);
       })
       .catch(err => console.log(err));
   }, []);
@@ -58,6 +60,8 @@ const totalPrice = cartComics.reduce((acc, current) => acc + current.prices[0].p
                   handleComicsAddItemToCart={handleComicsAddItemToCart} 
                   cartComics={cartComics}
                   totalPrice={totalPrice}
+                  loading={loading}
+                  
               />
               } path="/" exact
             />
@@ -68,6 +72,8 @@ const totalPrice = cartComics.reduce((acc, current) => acc + current.prices[0].p
                   setCharacters={setCharacters} 
                   cartComics={cartComics}
                   totalPrice={totalPrice}
+                  loading={loading}
+                  
               />
               } path="/characters" 
             />
