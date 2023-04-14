@@ -11,9 +11,9 @@ color: white;
 position: fixed;
 border-radius: 25px 25px 0px 0px;
 display: flex;
-justify-content: center;
+justify-content: space-around;
 align-items: center;
-gap: 10px;
+
 
 svg {
   font-size: 30px;
@@ -26,6 +26,12 @@ svg {
   gap: 4px;
 }
 
+.hq {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .cartnumber {
   width: 20px;
   height: 20px;
@@ -36,5 +42,10 @@ svg {
   justify-content: center;
   align-items: center;
 
+}
+
+p{
+  font-size: 16px;
+  font-weight: bold;
 }
 `

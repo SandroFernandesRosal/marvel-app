@@ -25,6 +25,8 @@ function handleRemoveComicsFromCart(index) {
   setCartComics(filteredCartComics);
 }
 
+const totalPrice = cartComics.reduce((acc, current) => acc + current.prices[0].price, 0);
+
   useEffect(() => {
     api
       .get('/characters')
@@ -55,6 +57,7 @@ function handleRemoveComicsFromCart(index) {
                   setComics={setComics} 
                   handleComicsAddItemToCart={handleComicsAddItemToCart} 
                   cartComics={cartComics}
+                  totalPrice={totalPrice}
               />
               } path="/" exact
             />
@@ -64,6 +67,7 @@ function handleRemoveComicsFromCart(index) {
                   characters={characters} 
                   setCharacters={setCharacters} 
                   cartComics={cartComics}
+                  totalPrice={totalPrice}
               />
               } path="/characters" 
             />
@@ -73,6 +77,7 @@ function handleRemoveComicsFromCart(index) {
                   cartComics={cartComics} 
                   handleRemoveComicsFromCart={handleRemoveComicsFromCart} 
                   setCartComics={setCartComics} 
+                  totalPrice={totalPrice}
               />
              } path="/carrinho" 
             />

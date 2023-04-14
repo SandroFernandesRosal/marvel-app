@@ -6,7 +6,7 @@ import { CardCharacter } from "../../Components/Cards/CardCharacter";
 import { CartButton } from "../../Components/CartButton/CartButton";
 import { BsPlusSquare } from 'react-icons/bs'
 
-export const Characters = ({characters, setCharacters, cartComics}) => {
+export const Characters = ({characters, setCharacters, cartComics, totalPrice}) => {
 
   const handleMore = useCallback( async () => {
     try {
@@ -50,7 +50,7 @@ return(
   </Container>
 
      
-      {cartComics.length > 0 ? <CartButton  cartComics={cartComics} /> : null }
+      {cartComics.length > 0 ? <CartButton  cartComics={cartComics} totalPrice={totalPrice}  /> : null }
 </>
   )
 }

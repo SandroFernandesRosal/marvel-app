@@ -62,7 +62,7 @@ color: white;
 position: fixed;
 border-radius: 25px 25px 0px 0px;
 display: flex;
-justify-content: center;
+justify-content: space-around;
 align-items: center;
 gap: 10px;
 
@@ -70,9 +70,11 @@ button {
   outline: none;
   border: none;
   height: 25px;
+  
   border-radius: 5px;
   padding: 5px;
   color: red;
+  margin: 0 5px;
 }
 
 button:hover{

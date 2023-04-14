@@ -4,10 +4,10 @@ import { ContainerComics, Buy, ButtonPrice } from "./styles";
 import { BsCartXFill } from 'react-icons/bs'
 import { useState, useEffect } from "react";
 
-export const Cart = ({cartComics, handleRemoveComicsFromCart, setCartComics}) => {
+export const Cart = ({cartComics, handleRemoveComicsFromCart, setCartComics, totalPrice}) => {
  const [buy, setBuy ] = useState(false);
 
- const totalPrice = cartComics.reduce((acc, current) => acc + current.prices[0].price, 0);
+ 
  
  const handleBuy = () => {
   
@@ -27,6 +27,14 @@ export const Cart = ({cartComics, handleRemoveComicsFromCart, setCartComics}) =>
     setCartComics([]);
   }
 
+ }
+
+ const clearCart = () => {
+
+  if(cartComics.length === 0) {
+    alert('Carrinho vazio, adicione um ítem!');
+  }
+  setCartComics([]);
  }
 
  useEffect(() => {
@@ -88,8 +96,14 @@ export const Cart = ({cartComics, handleRemoveComicsFromCart, setCartComics}) =>
     
      <ButtonPrice> 
         <h2>Total: R$ {totalPrice.toFixed(2)}</h2>
+        <div>
         <button onClick={() => handleBuy()}>Comprar</button>
+        <button onClick={clearCart}>Limpar </button>
+        </div>
+        
      </ButtonPrice>
+
+     
      
      
 </Container>

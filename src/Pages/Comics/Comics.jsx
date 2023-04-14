@@ -7,7 +7,7 @@ import { CartButton } from "../../Components/CartButton/CartButton";
 import { BsPlusSquare } from 'react-icons/bs'
 
 
-export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cartComics }) => {
+export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cartComics, totalPrice }) => {
 
   const handleMoreComics = useCallback( async () => {
     try {
@@ -54,7 +54,7 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
     </Container>
 
     
-    {cartComics.length > 0 ? <CartButton cart={cart} cartComics={cartComics} /> : null }
+    {cartComics.length > 0 ? <CartButton cart={cart} cartComics={cartComics} totalPrice={totalPrice}  /> : null }
     
 </>
   )
