@@ -86,11 +86,10 @@ background-color: rgba(100, 100, 100, 0.1);
 
  ul {
   display: flex;
- flex-direction: column;
- justify-content: center;
- 
- height: 100%;
- text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
  
 }
 
@@ -98,15 +97,16 @@ li {
   margin: 5px;
   font-size: 40px;
   font-weight: bold;
- color: white;
- text-shadow: 1px 1px 1px red;
- width: 100vw;
- 
+  color: white;
+  text-shadow: 1px 1px 1px red;
+  width: 100%;
+  padding: 0 20px;
+
 }
 
 li:hover {
   transition:  0.5s;
-  transform: scale(1.2);
+  transform: scale(1.17);
   text-shadow: 1px 1px 1px white;
 }
 

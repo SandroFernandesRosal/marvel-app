@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Background from "../../IMG/characters3.png";
+import Background from "../../IMG/characters7.png";
 
 export const Container = styled.ul`
 margin-top: 100px;
@@ -10,6 +10,7 @@ align-items: center;
 flex-wrap: wrap;
 background-image: url(${Background});
 background-size: 100%;
+
 
 `
 
@@ -27,14 +28,14 @@ button {
   outline: none;
   border-radius: 5px;
   cursor: pointer;
+  background-color: red;
+  color: white;
 }
 
 button svg {
   font-size: 20px;
 }
-button svg:hover {
-  color: green;
-}
+
 `
 
 export const Buy = styled.div`
@@ -70,7 +71,7 @@ button {
   outline: none;
   border: none;
   height: 25px;
-  
+  font-weight: bold;
   border-radius: 5px;
   padding: 5px;
   color: red;

@@ -30,7 +30,7 @@ return(
 <>    
   <Container style={{height: characters.length === 0 ? "100vh" : null}} >
 
-   {loading ? <img src={Loading}></img> :
+   {loading ? <img src={Loading}/>:
 
      <>
       <SearchContent>

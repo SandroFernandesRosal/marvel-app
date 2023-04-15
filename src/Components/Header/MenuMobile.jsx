@@ -6,9 +6,9 @@ export const MenuMobile = ({ handleMenu }) => {
   return(
     <Menu>
       <ul >
-        <Link to="/"> <li onClick={handleMenu}>Quadrinhos</li> </Link>
-        <Link to="/characters"> <li onClick={handleMenu}>Personagens</li> </Link>
-        <Link to="/carrinho"> <li onClick={handleMenu}>Meu Carrinho</li> </Link>
+        <Link to="/"> <li onClick={handleMenu}> Quadrinhos </li> </Link>
+        <Link to="/characters"> <li onClick={handleMenu}> Personagens </li> </Link>
+        <Link to="/carrinho"> <li onClick={handleMenu}> Carrinho </li> </Link>
       </ul>
     </Menu>
   )

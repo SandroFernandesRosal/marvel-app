@@ -30,7 +30,7 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
     <>
     <Container style={{height: comics.length === 0 ? "100vh" : null}} >
 
-    {loading ? <img src={Loading}></img> :
+    {loading ? <img src={Loading} /> :
 
    <>
       <SearchContent>
