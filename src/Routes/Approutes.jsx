@@ -7,12 +7,13 @@ import { Comics } from "../Pages/Comics/Comics";
 import api from "../Services/api";
 import { useState, useEffect } from "react";
 import { Characters } from "../Pages/Characters/Characters";
+import usePersistedState from "../Hooks/usePersistedState";
 
 
 export const AppRoutes = ({handleChangeTheme, theme}) => {
   const [characters, setCharacters ] = useState([]);
   const [comics, setComics ] = useState([]);
-  const [cartComics, setCartComics ] = useState([]);
+  const [cartComics, setCartComics ] = usePersistedState('cartStorage',[]);
   const [loading, setLoading ] = useState(true);
 
 function handleComicsAddItemToCart(thumbnail, title, prices) {
