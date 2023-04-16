@@ -3,7 +3,7 @@ import Background from "../../IMG/characters3.png";
 
 export const Container = styled.ul`
 display: flex;
-margin: 70px 0px 20px 0px;
+margin: 70px 0px 0px 0px;
 justify-content: center;
 align-items: center;
 list-style: none;
@@ -12,8 +12,6 @@ overflow: hidden;
 background-image: url(${Background});
 background-size: 100%;
 padding-bottom: 30px;
-
-
 
 `
 export const CardItem = styled.li` 

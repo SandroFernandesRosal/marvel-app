@@ -28,39 +28,39 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
 
   return(
     <>
-    <Container style={{height: comics.length === 0 ? "100vh" : null}} >
+      <Container style={{height: comics.length === 0 ? "100vh" : null}} >
 
-    {loading ? <img src={Loading} /> :
+          {loading ? <img src={Loading} /> :
 
-   <>
-      <SearchContent>
-        <SearchComics setComics={setComics}/>
-      </SearchContent>
+            <>
+                <SearchContent>
+                  <SearchComics setComics={setComics}/>
+                </SearchContent>
+              
+                {comics.map(comic => 
+
+                  <CardComics
+                      key={comic.id}
+                      comic={comic}
+                      handleComicsAddItemToCart={handleComicsAddItemToCart} 
+                  />
+
+                )
+                }
+
+                <More onClick={handleMoreComics}> 
+                  <div className="icon">
+                  <BsPlusSquare /></div>
+                  <div className="more-description"><h4>Mais quadrinhos</h4></div>
+                  
+                </More>
+            </>
+          }
+      </Container>
+
     
-      {comics.map(comic => 
-
-         <CardComics
-            key={comic.id}
-            comic={comic}
-            handleComicsAddItemToCart={handleComicsAddItemToCart} 
-         />
-
-       )
-      }
-
-   <More onClick={handleMoreComics}> 
-        <div className="icon">
-        <BsPlusSquare /></div>
-        <div className="more-description"><h4>Mais quadrinhos</h4></div>
-        
-    </More>
-  </>
-}
-    </Container>
-
+      {cartComics.length > 0 ? <CartButton cart={cart} cartComics={cartComics} totalPrice={totalPrice}  /> : null }
     
-    {cartComics.length > 0 ? <CartButton cart={cart} cartComics={cartComics} totalPrice={totalPrice}  /> : null }
-    
-</>
+   </>
   )
 }

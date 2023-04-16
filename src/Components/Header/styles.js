@@ -101,6 +101,7 @@ li {
   text-shadow: 1px 1px 1px red;
   width: 100%;
   padding: 0 20px;
+  
 
 }
 

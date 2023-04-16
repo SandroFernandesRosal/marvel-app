@@ -30,28 +30,28 @@ return(
 <>    
   <Container style={{height: characters.length === 0 ? "100vh" : null}} >
 
-   {loading ? <img src={Loading}/>:
+    {loading ? <img src={Loading}/>:
 
-     <>
-      <SearchContent>
-        <Search setCharacters={setCharacters}/>
-      </SearchContent>
-            
-      {characters.map((character) => 
+       <>
+            <SearchContent>
+              <Search setCharacters={setCharacters}/>
+            </SearchContent>
                   
-              <CardCharacter 
-                key={character.id}
-                character={character}
-               />  
-            )
-      }
+            {characters.map((character) => 
+                        
+                    <CardCharacter 
+                      key={character.id}
+                      character={character}
+                    />  
+                  )
+            }
 
-      <More onClick={handleMore}> 
-        <div className="icon">
-        <BsPlusSquare /></div> 
-        <div className="more-description"><h5>Mais Personagens</h5></div>
-      </More>
-      </>
+            <More onClick={handleMore}> 
+              <div className="icon">
+              <BsPlusSquare /></div> 
+              <div className="more-description"><h5>Mais Personagens</h5></div>
+            </More>
+        </>
       }
       
   </Container>
