@@ -5,12 +5,10 @@ export const Container = styled.ul`
 margin-top: 100px;
 display: flex;
 flex-direction: column;
-
 align-items: center;
 flex-wrap: wrap;
 background-image: url(${Background});
 background-size: 100%;
-
 
 `
 

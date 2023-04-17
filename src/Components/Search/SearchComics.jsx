@@ -4,7 +4,7 @@ import { SearchComic } from "./styles";
 
 export const SearchComics = ({setComics}) => {
 
-  const [searchComics, setSearchComics] = useState('')
+  const [searchComics, setSearchComics] = useState('');
  
  useEffect(() => {
 

@@ -12,10 +12,10 @@ align-items: center;
 border-bottom: 1px solid red;
 z-index: 999;
 
+
 .logo {
   width: 80px;
  
-
 }
 
 .button-theme {

@@ -46,7 +46,7 @@ export const Cart = ({cartComics, handleRemoveComicsFromCart, setCartComics, tot
 }, []);
 
   return(
-    <Container style={{height: cartComics.length === 0 ? "100vh" : null}} >
+    <Container style={{height: cartComics.length === 0 ? "100vh" : "100"}} >
 
       
  
