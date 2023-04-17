@@ -137,10 +137,14 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
   flex: 1;
   text-align: justify;
   padding: 0 10px;
+}
+
+.descriptions h4 {
+  min-height: 35px;
 }
 
 .descriptions button {
@@ -152,6 +156,7 @@ img {
   border-radius: 50%;
   padding: 5px;
   margin-top: 10px;
+  min-height: 30px;
 
 }
 
