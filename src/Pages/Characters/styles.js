@@ -138,6 +138,11 @@ img {
 
 }
 
+.descriptions span {
+  padding: 0 10px;
+  text-align: justify;
+}
+
 .descriptions button svg {
   font-size: 20px;
   color: red;

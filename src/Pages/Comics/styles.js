@@ -139,8 +139,6 @@ img {
   justify-content: center;
   gap: 15px;
   flex: 1;
-  
-  padding: 0 10px;
 }
 
 .descriptions h4 {
@@ -162,6 +160,7 @@ img {
 
 .descriptions span{
   text-align: justify;
+  padding: 0 10px;
 }
 
 .descriptions button svg {
