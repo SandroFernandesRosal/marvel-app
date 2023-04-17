@@ -9,7 +9,7 @@ align-items: center;
 flex-wrap: wrap;
 background-image: url(${Background});
 background-size: 100%;
-
+min-height: 100vh;
 `
 
 export const ContainerComics = styled.ul`
