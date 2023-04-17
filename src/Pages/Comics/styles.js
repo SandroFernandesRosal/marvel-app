@@ -139,7 +139,7 @@ img {
   justify-content: center;
   gap: 15px;
   flex: 1;
-  text-align: justify;
+  
   padding: 0 10px;
 }
 
@@ -158,6 +158,10 @@ img {
   margin-top: 10px;
   min-height: 30px;
 
+}
+
+.descriptions span{
+  text-align: justify;
 }
 
 .descriptions button svg {
