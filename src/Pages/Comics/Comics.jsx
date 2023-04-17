@@ -48,7 +48,7 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
                 )
                 }
 
-             {cartComics.length > 0 &&
+             {comics.length > 0 &&
              
               <More onClick={handleMoreComics}> 
                 <div className="icon">
