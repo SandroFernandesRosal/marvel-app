@@ -28,7 +28,7 @@ export const Characters = ({characters, setCharacters, cartComics, totalPrice, l
 return(
 
 <>    
-  <Container style={{height: characters.length === 0 ? "100vh" : null}} >
+  <Container>
 
     {loading ? <img src={Loading}/>:
 

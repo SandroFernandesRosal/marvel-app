@@ -28,7 +28,7 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
 
   return(
     <>
-      <Container style={{height: comics.length === 0 ? "100vh" : null}} >
+      <Container>
 
           {loading ? <img src={Loading} /> :
 

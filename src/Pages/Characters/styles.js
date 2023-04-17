@@ -12,6 +12,7 @@ overflow: hidden;
 background-image: url(${Background});
 background-size: 100%;
 padding-bottom: 30px;
+min-height: 100vh;
 
 `
 export const CardItem = styled.li` 
