@@ -33,10 +33,12 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
           {loading ? <img src={Loading} /> :
 
             <>
-                <SearchContent>
-                  <SearchComics setComics={setComics}/>
-                </SearchContent>
-              
+                {comics.length > 0 && 
+                    <SearchContent>
+                      <SearchComics setComics={setComics}/>
+                    </SearchContent>
+                }
+                
                 {comics.map(comic => 
 
                   <CardComics

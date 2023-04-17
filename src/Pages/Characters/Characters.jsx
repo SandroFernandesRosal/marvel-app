@@ -33,10 +33,12 @@ return(
     {loading ? <img src={Loading}/>:
 
        <>
-            <SearchContent>
-              <Search setCharacters={setCharacters}/>
-            </SearchContent>
-                  
+           {characters.length > 0 && 
+                <SearchContent>
+                  <Search setCharacters={setCharacters}/>
+                </SearchContent>
+            }   
+                 
             {characters.map((character) => 
                         
                     <CardCharacter 
