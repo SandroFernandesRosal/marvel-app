@@ -45,12 +45,14 @@ return(
                     />  
                   )
             }
-
-            <More onClick={handleMore}> 
-              <div className="icon">
-              <BsPlusSquare /></div> 
-              <div className="more-description"><h5>Mais Personagens</h5></div>
-            </More>
+            {characters.length > 0 && 
+                <More onClick={handleMore}> 
+                  <div className="icon">
+                  <BsPlusSquare /></div> 
+                  <div className="more-description"><h5>Mais Personagens</h5></div>
+                </More>
+            }
+            
         </>
       }
       

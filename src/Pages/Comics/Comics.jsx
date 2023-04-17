@@ -48,12 +48,16 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
                 )
                 }
 
-                <More onClick={handleMoreComics}> 
-                  <div className="icon">
-                  <BsPlusSquare /></div>
-                  <div className="more-description"><h4>Mais quadrinhos</h4></div>
-                  
-                </More>
+             {cartComics.length > 0 &&
+             
+              <More onClick={handleMoreComics}> 
+                <div className="icon">
+                <BsPlusSquare /></div>
+                <div className="more-description"><h4>Mais quadrinhos</h4></div>
+              </More>
+             
+             }
+               
             </>
           }
       </Container>
