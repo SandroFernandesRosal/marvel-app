@@ -28,9 +28,7 @@ export const Characters = ({characters, setCharacters, cartComics, totalPrice, l
 return(
 
 <>    
-  <Container style={{alignItems: characters.length < 1 ? "flex-start": "center",
-                     padding: characters.length < 1 ? "50px": null
-                    }}>
+  <Container>
 
     {loading ? <img src={Loading}/>:
 

@@ -28,10 +28,7 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
 
   return(
     <>
-      <Container 
-        style={{alignItems: comics.length < 1 ? "flex-start": "center",
-                padding: comics.length < 1 ? "50px": null 
-              }}>
+      <Container>
 
           {loading ? <img src={Loading} /> :
 
