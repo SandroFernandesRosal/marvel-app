@@ -122,7 +122,6 @@ width: 80vw;
 height: 70vh;
 background-color: ${({ theme }) => theme.colors.primaryBg};
 display: flex;
-
 box-shadow: 0 4px 4px -2px ${({ theme }) => theme.colors.primaryColor} ;
 
 
@@ -137,8 +136,11 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 20px;
   flex: 1;
+  text-align: justify;
+  padding: 0 10px;
 }
 
 .descriptions button {
@@ -149,6 +151,7 @@ img {
   align-items: center;
   border-radius: 50%;
   padding: 5px;
+  margin-top: 10px;
 
 }
 
