@@ -28,7 +28,10 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
 
   return(
     <>
-      <Container>
+      <Container 
+        style={{alignItems: comics.length < 1 ? "flex-start": "center",
+                padding: comics.length < 1 ? "50px": null 
+              }}>
 
           {loading ? <img src={Loading} /> :
 
@@ -38,7 +41,7 @@ export const Comics = ({comics, setComics, handleComicsAddItemToCart, cart, cart
                       <SearchComics setComics={setComics}/>
                     </SearchContent>
                 }
-                
+
                 {comics.map(comic => 
 
                   <CardComics
