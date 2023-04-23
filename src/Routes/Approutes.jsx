@@ -20,7 +20,7 @@ function handleComicsAddItemToCart(thumbnail, title, prices) {
   setCartComics([...cartComics, itemObject]);
 }
 
-function handleRemoveComicsFromCart(index) {
+   function handleRemoveComicsFromCart(index) {
   const filteredCartComics = cartComics.filter(
     (cartItem) => cartComics.indexOf(cartItem) !== index);
   setCartComics(filteredCartComics);

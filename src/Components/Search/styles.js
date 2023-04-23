@@ -14,19 +14,21 @@ export const Container = styled.input`
   color: white;
   font-weight: bold;
   
-  
   ::placeholder{
     color: white;
     font-weight: bold;
   }
  
+  :focus {
+    background-color: rgba(1,1,1,0.4);
+  }
 
 `
 
 export const SearchComic = styled.input`
  
 
- width: 40%;
+  width: 40%;
   height:35px;
   border-radius: 20px;
   border: 1px solid red;
@@ -37,6 +39,11 @@ export const SearchComic = styled.input`
   color: white;
   font-weight: bold;
   margin-top: 40px;
+
+  :focus {
+    background-color: rgba(1,1,1,0.4);
+  }
+  
   
   ::placeholder{
     color: white;

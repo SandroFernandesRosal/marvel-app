@@ -36,6 +36,8 @@ cursor: pointer;
 }
 
 
+
+
 img {
  width: 100%;
  border-bottom: 3px solid red;
